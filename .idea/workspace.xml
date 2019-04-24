@@ -1,7 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40dac388-a9ab-454f-8a0f-84c101321777" name="Default Changelist" comment="" />
+    <list default="true" id="40dac388-a9ab-454f-8a0f-84c101321777" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Resources/FOSUserBundle/views/ChangePassword/change_password.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Resources/FOSUserBundle/views/ChangePassword/change_password_content.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Resources/FOSUserBundle/views/Group/edit.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Resources/FOSUserBundle/views/Group/edit_content.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Resources/FOSUserBundle/views/Group/list.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Resources/FOSUserBundle/views/Group/list_content.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Resources/FOSUserBundle/views/Group/new.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Resources/FOSUserBundle/views/Group/new_content.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Resources/FOSUserBundle/views/Group/show.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Resources/FOSUserBundle/views/Group/show_content.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Resources/FOSUserBundle/views/Profile/edit.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Resources/FOSUserBundle/views/Profile/edit_content.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Resources/FOSUserBundle/views/Profile/show.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Resources/FOSUserBundle/views/Profile/show_content.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Resources/FOSUserBundle/views/Registration/check_email.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Resources/FOSUserBundle/views/Registration/confirmed.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Resources/FOSUserBundle/views/Registration/email.txt.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Resources/FOSUserBundle/views/Registration/register.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Resources/FOSUserBundle/views/Registration/register_content.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Resources/FOSUserBundle/views/Resetting/check_email.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Resources/FOSUserBundle/views/Resetting/email.txt.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Resources/FOSUserBundle/views/Resetting/request.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Resources/FOSUserBundle/views/Resetting/request_content.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Resources/FOSUserBundle/views/Resetting/reset.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Resources/FOSUserBundle/views/Resetting/reset_content.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Resources/FOSUserBundle/views/Security/login.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Resources/FOSUserBundle/views/Security/login_content.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Resources/FOSUserBundle/views/layout.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +57,7 @@
           <entry key="json" value="1" />
           <entry key="php" value="4" />
           <entry key="sh" value="1" />
+          <entry key="twig" value="3" />
           <entry key="yaml" value="4" />
         </counts>
       </usages-collector>
@@ -34,6 +66,7 @@
           <entry key="Bash" value="1" />
           <entry key="JSON" value="1" />
           <entry key="PHP" value="4" />
+          <entry key="Twig" value="3" />
           <entry key="YAML" value="4" />
         </counts>
       </usages-collector>
@@ -41,6 +74,7 @@
         <counts>
           <entry key="json" value="1" />
           <entry key="php" value="165" />
+          <entry key="twig" value="3" />
           <entry key="yaml" value="51" />
         </counts>
       </usages-collector>
@@ -48,6 +82,7 @@
         <counts>
           <entry key="JSON" value="1" />
           <entry key="PHP" value="165" />
+          <entry key="Twig" value="3" />
           <entry key="YAML" value="51" />
         </counts>
       </usages-collector>
@@ -56,19 +91,13 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/packages/fos_user.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-712" />
-          </provider>
+        <entry file="file://$PROJECT_DIR$/composer.lock">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -91,26 +120,11 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190424114242.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="29" column="93" lean-forward="true" selection-start-line="29" selection-start-column="93" selection-end-line="29" selection-end-column="93" />
+            <state relative-caret-position="270">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190424083336.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entity/WorkShift.php">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -122,7 +136,30 @@
         <entry file="file://$PROJECT_DIR$/config/routes.yaml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+              <caret line="3" selection-start-line="3" selection-start-column="1" selection-end-line="7" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Resources/FOSUserBundle/views/ChangePassword/change_password.html.twig">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Resources/FOSUserBundle/views/Registration/register.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Resources/FOSUserBundle/views/Registration/register_content.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="9" lean-forward="true" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -131,6 +168,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -142,6 +184,8 @@
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/config/packages/fos_user.yaml" />
         <option value="$PROJECT_DIR$/src/Migrations/Version20190424114242.php" />
+        <option value="$PROJECT_DIR$/src/Resources/FOSUserBundle/views/Registration/register_content.html.twig" />
+        <option value="$PROJECT_DIR$/config/routes.yaml" />
       </list>
     </option>
   </component>
@@ -248,6 +292,7 @@
     <option name="width" value="2146" />
     <option name="height" value="1156" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -269,18 +314,84 @@
               <item name="rideto" type="b2602c69:ProjectViewProjectNode" />
               <item name="rideto" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Migrations" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="rideto" type="b2602c69:ProjectViewProjectNode" />
               <item name="rideto" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+              <item name="FOSUserBundle" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rideto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rideto" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+              <item name="FOSUserBundle" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rideto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rideto" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rideto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rideto" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="friendsofsymfony" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rideto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rideto" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="friendsofsymfony" type="462c0819:PsiDirectoryNode" />
+              <item name="user-bundle" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rideto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rideto" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="friendsofsymfony" type="462c0819:PsiDirectoryNode" />
+              <item name="user-bundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rideto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rideto" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="friendsofsymfony" type="462c0819:PsiDirectoryNode" />
+              <item name="user-bundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="rideto" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="rideto" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="rideto" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Migrations" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -289,6 +400,11 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Resources/FOSUserBundle/views" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -318,10 +434,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1858000" />
+    <option name="totallyTimeSpent" value="2469000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="445" y="42" width="2146" height="1156" extended-state="0" />
+    <frame x="503" y="79" width="2146" height="1156" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25237644" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -359,9 +475,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
-          <folding>
-            <element signature="e#53#95#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -400,16 +513,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190424113641.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190424113641.php" />
     <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190424114242.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="29" column="93" lean-forward="true" selection-start-line="29" selection-start-column="93" selection-end-line="29" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Resources/FOSUserBundle/views/ChangePassword/change_password.html.twig">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Controller/ProfileController.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Resources/FOSUserBundle/views/Registration/register.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="37" column="1" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-start-column="1" selection-end-line="7" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Resources/FOSUserBundle/views/Registration/register_content.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="9" lean-forward="true" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
         </state>
       </provider>
     </entry>
