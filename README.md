@@ -1,4 +1,6 @@
 ﻿![](https://avatars0.githubusercontent.com/u/4995607?v=3&s=100)
+# Ride to [![Build Status](https://travis-ci.com/nfqakademija/rideto.svg?branch=master)](https://travis-ci.com/nfqakademija/rideto)
+
 
 NFQ Akademija
 ============
