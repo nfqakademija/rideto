@@ -9,6 +9,8 @@
 namespace App\Controller;
 
 
+use App\Entity\Route;
+use App\Form\RouteRegisterType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use App\Entity\WorkShift;
 use Doctrine\ORM\EntityRepository;
@@ -16,9 +18,9 @@ use Doctrine\ORM\EntityRepository;
 class RouteRegistrationController extends Controller
 {
     public function index() {
-        $allShifts = $this->getDoctrine()->getRepository(WorkShift::class)->findAll();
-
-        return $this->render('registration/route-register.html.twig', ['allShifts' => $allShifts]);
+        $route = new Route();
+        $form = $this->createForm(RouteRegisterType::class);
+        return $this->render('registration/route-register.html.twig', ['route_form' => $form->createView()]);
     }
 
 }
