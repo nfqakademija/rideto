@@ -1,0 +1,69 @@
+.section-main {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('/img/bg4k.jpg');
+  background-size: cover;
+  background-position: center;
+
+  @media screen and (max-width: 750px) {
+    background: url('/img/bgplain.jpg');
+    background-position: center;
+    background-size: cover;
+  }
+
+  @media screen and (max-width: 538px) {
+    height: 580px;
+  }
+
+
+  .main-img {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+
+    @media screen and (max-width: 750px) {
+      display: block;
+      width: 400px;
+    }
+    @media screen and (max-width: 538px) {
+      width: 280px;
+    }
+  }
+
+  .info {
+    position: absolute;
+    width: 700px;
+    bottom: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    text-align: center;
+    font-size: 33px;
+
+    @media screen and (max-width: 750px) {
+      width: 450px;
+      font-size: 26px;
+    }
+    @media screen and (max-width: 538px) {
+      width: 280px;
+      font-size: 20px;
+      bottom: 72px;
+    }
+
+    &-main {
+
+    }
+
+    &-cs {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      text-transform: uppercase;
+      font-size: 20px;
+      display: none;
+    }
+  }
+}

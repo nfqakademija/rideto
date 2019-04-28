@@ -3,5 +3,27 @@
 {% block title %}{{ someVariable }}{% endblock %}
 
 {% block body %}
-    <div class="nfq-academy">{{ someVariable }}</div>
+    <section class="section-main">
+        <nav class="navigation">
+            <div class="navigation-brand">
+                <img src="/img/logo-w.png" alt="Logo icon">
+            </div>
+
+            <ul class="navigation-items">
+                <li class="navigation-items__item">Registracija</li>
+                <li class="navigation-items__item">Prisijungimas</li>
+            </ul>
+        </nav>
+
+        <img src="/img/paint.png" alt="" class="main-img">
+        
+        <div class="info">
+            <div class="info-main">
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.
+            </div>
+            <div class="info-cs">
+                Jau greitai ...
+            </div>
+        </div>
+    </section>
 {% endblock %}
