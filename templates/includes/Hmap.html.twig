@@ -16,7 +16,7 @@ function autoCompleteListener(textBox, event) {
         'query=' +  encodeURIComponent(textBox.value) +   // The search text which is the basis of the query
         '&beginHighlight=' + encodeURIComponent('<mark>') + //  Mark the beginning of the match in a token. 
         '&endHighlight=' + encodeURIComponent('</mark>') + //  Mark the end of the match in a token. 
-        '&maxresults=5' +  // The upper limit the for number of suggestions to be included 
+        '&maxresults=1' +  // The upper limit the for number of suggestions to be included 
                           // in the response.  Default is set to 5.
         '&app_id=' + APPLICATION_ID +
         '&app_code=' + APPLICATION_CODE;
@@ -156,8 +156,9 @@ function addSuggestionsToPanel(response){
 
 
  var content =  '<strong style="font-size: large;">' + 'Ieskoti'  + '</strong></br>';
-
+  {# SEARCH BAR #}
   content  += '<br/><input type="text" id="auto-complete" style="margin-left:5%; margin-right:5%; min-width:90%"  onkeyup="return autoCompleteListener(this, event);"><br/>';
+  {# RESPONSE #}
   content  += '<br/><strong>JSON ATSAKYMAS:</strong><br/>';
   content  += '<div style="margin-left:5%; margin-right:5%;"><pre style="max-height:235px"><code  id="suggestions" style="font-size: small;">' +'{}' + '</code></pre></div>';
 
