@@ -26,6 +26,30 @@ class WorkShift
      */
     private $description;
 
+    /**
+     * @return mixed
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param mixed $user
+     * @return WorkShift
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+        return $this;
+    }
+
+    /**
+     * @ORM\OneToOne(targetEntity="User", inversedBy="Workshift")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    protected $user;
+
     public function getId(): ?int
     {
         return $this->id;

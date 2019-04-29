@@ -4,3 +4,4 @@
 registerRoute:
   path: /register-route
   controller: App\Controller\RouteRegistrationController:index
+
