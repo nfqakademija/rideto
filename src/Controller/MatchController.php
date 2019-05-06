@@ -10,6 +10,7 @@ namespace App\Controller;
 
 
 use App\Entity\Matcher;
+use App\Entity\User;
 use App\ExtrernalApi\GooglePlacesApi;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -34,9 +35,9 @@ class MatchController extends Controller
     {
         //$this->saveMatchingData();
         $matches= $this->matches(1, 'driver', 100000, 100000);
+        $matchedUsers = $this->getMatchedUsers($matches);
 
-        var_dump($matches);
-        return $this->render('registration/route-register.html.twig');
+        return $this->render('home/matches.html.twig', ['users' => $matchedUsers, 'matchDetails' => $matches, 'title' => 'Matches']);
     }
 
     public function saveMatchingData()
@@ -77,15 +78,28 @@ class MatchController extends Controller
         foreach ($matches as $match) {
             if ($role === 'driver') {
                 if ($match->getHomeDistance() <= $distanceFromHome && $match->getWorkDistance() <= $distanceFromHome && $match->getDriverId() === $id) {
-                    array_push($results, $match->getClientId());
+                    $results[$match->getClientId()] = ['home_distance' => round($match->getHomeDistance()/1000, 2),'work_distance' => round($match->getWorkDistance()/1000, 2)];
                 } elseif ($role === 'client') {
                     if ($match->getHomeDistance() <= $distanceFromHome && $match->getWorkDistance() <= $distanceFromHome && $match->getClientId() === $id) {
-                        array_push($results, $match->getDriverId());
+                        $results[$match->getDriverId()] = ['home_distance' => round($match->getHomeDistance()/1000, 2),'work_distance' => round($match->getWorkDistance()/1000, 2)];
                     }
                 }
             }
         }
 
         return $results;
+    }
+
+
+    public function getMatchedUsers(array $matchedIds): array
+    {
+        $repository = $this->getDoctrine()->getRepository(User::class);
+        $results = [];
+
+        foreach($matchedIds as $id => $info){
+            array_push($results,$repository->find($id));
+        }
+
+       return $results;
     }
 }
