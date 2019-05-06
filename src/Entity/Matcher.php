@@ -2,13 +2,16 @@
 
 namespace App\Entity;
 
+
 use Doctrine\ORM\Mapping as ORM;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\MatcherRepository")
  */
 class Matcher
 {
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -94,8 +97,5 @@ class Matcher
         return $this;
     }
 
-    public function matches(int $id, int $distanceFromHome, int $distanceFromWork)
-    {
-
-    }
 }
+

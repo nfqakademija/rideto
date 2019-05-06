@@ -7,3 +7,6 @@ registerRoute:
 saveRoute:
   path: /route-save
   controller: App\Controller\RouteRegistrationController:store
+matches:
+  path: /matches
+  controller: App\Controller\MatchController:index
