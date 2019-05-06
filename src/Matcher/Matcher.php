@@ -11,5 +11,12 @@ namespace App\Matcher;
 
 class Matcher
 {
+    private $serviceProvider;
+
+    public function matches(int $id, int $distanceFromHome, int $distanceFromWork)
+    {
+
+    }
+
 
 }
