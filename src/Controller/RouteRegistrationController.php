@@ -14,6 +14,7 @@ use App\Form\RouteRegisterType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use App\Entity\WorkShift;
 use Doctrine\ORM\EntityRepository;
+use Symfony\Component\HttpFoundation\Request;
 
 class RouteRegistrationController extends Controller
 {
@@ -21,6 +22,20 @@ class RouteRegistrationController extends Controller
         $route = new Route();
         $form = $this->createForm(RouteRegisterType::class);
         return $this->render('registration/route-register.html.twig', ['route_form' => $form->createView()]);
+    }
+
+    public function store(Request $request) {
+
+        $route = new Route();
+        $em = $this->getDoctrine()->getManager();
+        $form = $this->createForm(RouteRegisterType::class, $route, [
+            'action' => $this->generateUrl('savaRoute')
+        ]);
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()){
+
+        }
     }
 
 }

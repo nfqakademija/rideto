@@ -4,3 +4,6 @@
 registerRoute:
   path: /register-route
   controller: App\Controller\RouteRegistrationController:index
+saveRoute:
+  path: /route-save
+  controller: App\Controller\RouteRegistrationController:store

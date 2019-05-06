@@ -21,7 +21,7 @@
 
 </style>
 
-    {{ form(route_form) }}
+    {{ form(route_form, {'action': path('saveRoute'), 'method': 'POST'}) }}
 
 <div id="map"></div>
 
