@@ -49,7 +49,7 @@ class GooglePlacesApi
      * @param string $pointB
      * @return mixed
      */
-    public function makeRequest(string $pointA, string $pointB)
+    private function makeRequest(string $pointA, string $pointB)
     {
         $data = file_get_contents($this->baseURL . '&origins=place_id:' . $pointA . '&destinations=place_id:'. $pointB .'&key=' . $this->key);
 
