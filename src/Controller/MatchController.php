@@ -12,10 +12,12 @@ namespace App\Controller;
 use App\Entity\Matcher;
 use App\Entity\User;
 use App\ExtrernalApi\GooglePlacesApi;
+use App\Service\MatchMaker;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class MatchController extends Controller
 {
+
     private $matchData = [['id' => 1,'home_location' => 'EiVQaWzEl27FsyBnYXR2xJcsIEFrYWRlbWlqYSwgTGl0aHVhbmlhIi4qLAoUChIJN3XNir8h50YRtzS026csNBoSFAoSCVEqEHrAIedGEa8GikwJD_YZ', 'work_location' => 'ChIJ5RuEQgEi50YR4OfyAOJqryU', 'role' => 'driver'],
         ['id' => 2,'home_location' => 'EixWaWVueWLEl3MgZ2F0dsSXIDMyLCBSYXVkb25kdmFyaXMsIExpdGh1YW5pYSIwEi4KFAoSCfMldP_nH-dGEfDGQbbnBc6PECAqFAoSCdmiJHroH-dGEV6EXZMM-zVf', 'work_location' => 'ChIJpY59qwgi50YRPYnjmtKlieg', 'role' => 'client'],
         ['id' => 3,'home_location' => 'ChIJAQAkzg8i50YR0FSNJdHs2Vg', 'work_location' => 'ChIJGd-ishwa50YR3_J0NtUhwvY', 'role' => 'client'],
@@ -31,11 +33,11 @@ class MatchController extends Controller
 
     private $placesAPI;
 
-    public function index()
+    public function index(MatchMaker $matchMaker)
     {
         //$this->saveMatchingData();
-        $matches= $this->matches(1, 'driver', 100000, 100000);
-        $matchedUsers = $this->getMatchedUsers($matches);
+        $matches= $matchMaker->findMatches(11, 'driver', 100000, 100000);
+        $matchedUsers = $matchMaker->getMatchedUsers($matches);
 
         return $this->render('home/matches.html.twig', ['users' => $matchedUsers, 'matchDetails' => $matches, 'title' => 'Matches']);
     }
@@ -69,37 +71,5 @@ class MatchController extends Controller
 
     }
 
-    public function matches(int $id, string $role, int $distanceFromHome, int $distanceFromWork)
-    {
-        $repository = $this->getDoctrine()->getRepository(Matcher::class);
-        $matches = $repository->findAll();
-        $results = [];
 
-        foreach ($matches as $match) {
-            if ($role === 'driver') {
-                if ($match->getHomeDistance() <= $distanceFromHome && $match->getWorkDistance() <= $distanceFromHome && $match->getDriverId() === $id) {
-                    $results[$match->getClientId()] = ['home_distance' => round($match->getHomeDistance()/1000, 2),'work_distance' => round($match->getWorkDistance()/1000, 2)];
-                } elseif ($role === 'client') {
-                    if ($match->getHomeDistance() <= $distanceFromHome && $match->getWorkDistance() <= $distanceFromHome && $match->getClientId() === $id) {
-                        $results[$match->getDriverId()] = ['home_distance' => round($match->getHomeDistance()/1000, 2),'work_distance' => round($match->getWorkDistance()/1000, 2)];
-                    }
-                }
-            }
-        }
-
-        return $results;
-    }
-
-
-    public function getMatchedUsers(array $matchedIds): array
-    {
-        $repository = $this->getDoctrine()->getRepository(User::class);
-        $results = [];
-
-        foreach($matchedIds as $id => $info){
-            array_push($results,$repository->find($id));
-        }
-
-       return $results;
-    }
 }
