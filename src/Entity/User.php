@@ -37,6 +37,27 @@ class User
     private $role;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $routeDescription;
+
+    /**
+     * @return mixed
+     */
+    public function getRouteDescription()
+    {
+        return $this->routeDescription;
+    }
+
+    /**
+     * @param mixed $routeDescription
+     */
+    public function setRouteDescription($routeDescription): void
+    {
+        $this->routeDescription = $routeDescription;
+    }
+
+    /**
      * @ORM\OneToOne(targetEntity="App\Entity\Route", mappedBy="user", cascade={"persist", "remove"})
      */
     private $route;
