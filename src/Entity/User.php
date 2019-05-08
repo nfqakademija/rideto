@@ -36,6 +36,11 @@ class User
      */
     private $role;
 
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\Route", mappedBy="user", cascade={"persist", "remove"})
+     */
+    private $route;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -85,6 +90,23 @@ class User
     public function setRole(string $role): self
     {
         $this->role = $role;
+
+        return $this;
+    }
+
+    public function getRoute(): ?Route
+    {
+        return $this->route;
+    }
+
+    public function setRoute(Route $route): self
+    {
+        $this->route = $route;
+
+        // set the owning side of the relation if necessary
+        if ($this !== $route->getUser()) {
+            $route->setUser($this);
+        }
 
         return $this;
     }

@@ -17,6 +17,11 @@ class Route
     private $id;
 
     /**
+     * @ORM\Column(type="integer")
+     */
+    private $user_id;
+
+    /**
      * @ORM\Column(type="string", length=255)
      */
     private $home_location;
@@ -27,18 +32,26 @@ class Route
     private $work_location;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\OneToOne(targetEntity="App\Entity\User", inversedBy="route", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $work_shift_id;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $user_id;
+    private $user;
 
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getUserId(): ?int
+    {
+        return $this->user_id;
+    }
+
+    public function setUserId(int $user_id): self
+    {
+        $this->user_id = $user_id;
+
+        return $this;
     }
 
     public function getHomeLocation(): ?string
@@ -65,26 +78,14 @@ class Route
         return $this;
     }
 
-    public function getWorkShiftId(): ?int
+    public function getUser(): ?User
     {
-        return $this->work_shift_id;
+        return $this->user;
     }
 
-    public function setWorkShiftId(int $work_shift_id): self
+    public function setUser(User $user): self
     {
-        $this->work_shift_id = $work_shift_id;
-
-        return $this;
-    }
-
-    public function getUserId(): ?int
-    {
-        return $this->user_id;
-    }
-
-    public function setUserId(int $user_id): self
-    {
-        $this->user_id = $user_id;
+        $this->user = $user;
 
         return $this;
     }

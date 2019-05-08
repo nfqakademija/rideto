@@ -29,14 +29,14 @@ class MatchMaker
         $this->em = $em;
     }
 
-    public function findMatches(int $id, string $role, int $distanceFromHome, int $distanceFromWork): array
+    public function findMatches(User $user, int $distanceFromHome, int $distanceFromWork): array
     {
         $matches = [];
 
-        if ($role === 'driver') {
-            $matches = $this->matchedClientsInfo($id, $distanceFromHome, $distanceFromWork);
-        } elseif ($role === 'client'){
-            $matches = $this->matchedDriversInfo($id, $distanceFromHome, $distanceFromWork);
+        if ($user->getRole() === 'driver') {
+            $matches = $this->matchedClientsInfo($user->getId(), $distanceFromHome, $distanceFromWork);
+        } elseif ($user->getRole() === 'client'){
+            $matches = $this->matchedDriversInfo($user->getId(), $distanceFromHome, $distanceFromWork);
         }
 
         return $matches;
