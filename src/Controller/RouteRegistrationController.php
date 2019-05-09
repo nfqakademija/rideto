@@ -14,8 +14,6 @@ use App\Entity\User;
 use App\Form\RouteRegisterType;
 use App\Service\MatchMaker;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use App\Entity\WorkShift;
-use Doctrine\ORM\EntityRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
