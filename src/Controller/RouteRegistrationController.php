@@ -12,14 +12,14 @@ namespace App\Controller;
 use App\Entity\Route;
 use App\Entity\User;
 use App\Form\RouteRegisterType;
-use App\Service\MatchMaker;
+use App\Service\MatchDataService;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class RouteRegistrationController extends Controller
 {
-    public function index(MatchMaker $matchMaker, Request $request) {
+    public function index(MatchDataService $matchDataService, Request $request) {
 
         $form = $this->createForm(RouteRegisterType::class);
         $form->handleRequest($request);
@@ -45,7 +45,7 @@ class RouteRegistrationController extends Controller
             $entityManager->flush();
 
             if($form->getData()['role'] === 'driver'){
-                $matchMaker->setDistances($user);
+                $matchDataService->setDistances($user);
             }
 
             return new Response(
