@@ -8,15 +8,13 @@
 
 namespace App\Service;
 
-use App\Entity\Matcher;
 use App\Entity\User;
+use App\ExtrernalApi\GooglePlacesApi;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 
 class MatchMaker
 {
-
-
     /* @var Doctrine\ORM\EntityManagerInterface $em */
     protected $em;
 
@@ -30,66 +28,84 @@ class MatchMaker
         $this->em = $em;
     }
 
-    public function findMatches(User $user, int $distanceFromHome, int $distanceFromWork): array
+    /**
+     * @param $user
+     * @param int $distanceFromHome
+     * @param int $distanceFromWork
+     * @return array
+     */
+    public function findMatches($user, int $distanceFromHome, int $distanceFromWork): array
     {
-        $matches = [];
-
         if ($user->getRole() === 'driver') {
-            $matches = $this->matchedClientsInfo($user->getId(), $distanceFromHome, $distanceFromWork);
+            $allDistances = $this->allClientsDistances($user);
         } elseif ($user->getRole() === 'client') {
-            $matches = $this->matchedDriversInfo($user->getId(), $distanceFromHome, $distanceFromWork);
+            $allDistances = $this->allDriversDistances($user);
         }
 
+        $matches = $this->filterByDistance($allDistances, $distanceFromHome, $distanceFromWork);
         return $matches;
     }
 
+    /**
+     * @param $driver
+     * @return array
+     */
+    private function allClientsDistances($driver){
+        $matches = [];
+        $placesApi = new GooglePlacesApi();
+        $clients  =  $clients = $this->em->getRepository(User::class)->findBy(['role' => 'client']);
 
-    public function getMatchedUsers(array $matches): array
+        $distanceData = $placesApi->getDistances($driver, $clients);
+        foreach ($clients as $key => $client) {
+            $matches[$key] = ['id' => $client->getid(),
+                              'name' => $client->getName(),
+                              'age' => $client->getAge(),
+                              'route' => $client->getRouteDescription(),
+                              'description' => $client->getDescription(),
+                              'work_distance_value' => $distanceData[$key]['work_distance_value'],
+                              'work_distance_text' => $distanceData[$key]['work_distance_text'],
+                              'home_distance_value' => $distanceData[$key]['home_distance_value'],
+                              'home_distance_text' => $distanceData[$key]['home_distance_text']
+                            ];
+        }
+            return $matches;
+      }
+
+    /**
+     * @param $client
+     * @return array
+     */
+    private function allDriversDistances($client){
+        $matches = [];
+        $placesApi = new GooglePlacesApi();
+        $drivers  = $this->em->getRepository(User::class)->findBy(['role' => 'driver']);
+
+        $distanceData = $placesApi->getDistances($client, $drivers);
+        foreach ($drivers as $key => $driver) {
+            $matches[$key] = ['id' => $driver->getid(),
+                'name' => $driver->getName(),
+                'age' => $driver->getAge(),
+                'route' => $driver->getRouteDescription(),
+                'description' => $driver->getDescription(),
+                'work_distance_value' => $distanceData[$key]['work_distance_value'],
+                'work_distance_text' => $distanceData[$key]['work_distance_text'],
+                'home_distance_value' => $distanceData[$key]['home_distance_value'],
+                'home_distance_text' => $distanceData[$key]['home_distance_text']
+            ];
+        }
+        return $matches;
+    }
+
+    private function filterByDistance(array $matches, int $distanceFromHome, int $distanceFromWork): array
     {
-        $repository = $this->em->getRepository(User::class);
         $results = [];
-
-        foreach ($matches as $id => $info) {
-            array_push($results, $repository->find($id));
+        foreach ($matches as $match) {
+            if ($match['work_distance_value'] <= $distanceFromWork
+                && $match['home_distance_value'] <= $distanceFromHome
+            ) {
+                array_push($results, $match);
+            }
         }
-
         return $results;
-    }
-
-
-    private function matchedClientsInfo(int $userId, int $distanceFromHome, int $distanceFromWork):array
-    {
-        $repository = $this->em->getRepository(Matcher::class);
-        $matchData = $repository->findAll();
-
-        $matches = [];
-        foreach ($matchData as $match) {
-            if ($match->getHomeDistance() <= $distanceFromHome
-                && $match->getWorkDistance() <= $distanceFromWork
-                && $match->getDriverId() === $userId
-            ) {
-                $matches[$match->getClientId()] = ['home_distance' => round($match->getHomeDistance()/1000, 2),
-                    'work_distance' => round($match->getWorkDistance()/1000, 2)];
-            }
-        }
-        return $matches;
-    }
-
-    private function matchedDriversInfo(int $userId, int $distanceFromHome, int $distanceFromWork):array
-    {
-        $repository = $this->em->getRepository(Matcher::class);
-        $matchData = $repository->findAll();
-
-        $matches = [];
-        foreach ($matchData as $match) {
-            if ($match->getHomeDistance() <= $distanceFromHome
-                && $match->getWorkDistance() <= $distanceFromWork
-                && $match->getClientId() === $userId
-            ) {
-                $matches[$match->getDriverId()] = ['home_distance' => round($match->getHomeDistance() / 1000, 2),
-                                                   'work_distance' => round($match->getWorkDistance() / 1000, 2)];
-            }
-        }
-        return $matches;
     }
 }

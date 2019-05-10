@@ -11,14 +11,13 @@ namespace App\Controller;
 use App\Entity\Route;
 use App\Entity\User;
 use App\Form\RouteRegisterType;
-use App\Service\MatchDataService;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class RouteRegistrationController extends Controller
 {
-    public function index(MatchDataService $matchDataService, Request $request)
+    public function index(Request $request)
     {
         $form = $this->createForm(RouteRegisterType::class);
         $form->handleRequest($request);
@@ -41,10 +40,6 @@ class RouteRegistrationController extends Controller
             $entityManager->persist($user);
             $entityManager->persist($route);
             $entityManager->flush();
-
-            if ($form->getData()['role'] === 'driver') {
-                $matchDataService->setDistances($user);
-            }
 
             return new Response(
                 'Saved new user with id: '.$user->getId()

@@ -17,6 +17,11 @@ use Symfony\Component\HttpFoundation\Request;
 class MatchController extends Controller
 {
 
+    /**
+     * @param Request $request
+     * @param MatchMaker $matchMaker
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function index(Request $request, MatchMaker $matchMaker)
     {
         $user = $this->getDoctrine()
@@ -37,12 +42,9 @@ class MatchController extends Controller
             $matches= $matchMaker->findMatches($user, 100000, 100000);
         }
 
-        $matchedUsers = $matchMaker->getMatchedUsers($matches);
-
-        return $this->render('home/matches.html.twig', ['users' => $matchedUsers,
-                                                              'matchDetails' => $matches,
+        return $this->render('home/matches.html.twig', ['matches' => $matches,
                                                               'title' => 'Matches',
                                                               'filter_form' => $form->createView()
                                                               ]);
-    }g
+    }
 }

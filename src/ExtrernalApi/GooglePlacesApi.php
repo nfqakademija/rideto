@@ -8,6 +8,8 @@
 
 namespace App\ExtrernalApi;
 
+use App\Entity\User;
+
 class GooglePlacesApi
 {
     private $key= 'AIzaSyAX-QC3A7Fn8_T76yNb-3JlyBfkl-NLc34';
@@ -29,24 +31,24 @@ class GooglePlacesApi
      * @param array $userList
      * @return array
      */
-    public function getDistances(string $userLocation, array $userList): array
+    public function getDistances(User $user, array $userList): array
     {
         $distanceInfo = [];
 
-        $homeDestinationList = $this->joinAllHomeLocations($userList);
-        $workDestinationList = $this->joinAllWorkLocations($userList);
+        $homeLocationList = $this->joinAllHomeLocations($userList);
+        $workLocationList = $this->joinAllWorkLocations($userList);
 
-        $requesHomeDistanceData = $this->makeRequest($userLocation, $homeDestinationList);
-        $requestWorkDistanceData = $this->makeRequest($userLocation, $workDestinationList);
+        $requestHomeDistanceData = $this->makeRequest($user->getRoute()->getHomeLocation(), $homeLocationList);
+        $requestWorkDistanceData = $this->makeRequest($user->getRoute()->getWorkLocation(), $workLocationList);
 
-        $this->setStatus($requesHomeDistanceData->status === 'OK' && $requestWorkDistanceData->status === 'OK');
+        $this->setStatus($requestHomeDistanceData->status === 'OK' && $requestWorkDistanceData->status === 'OK');
 
         if ($this->status === true) {
-            foreach ($requestHomeDistanceData->rows[0] as $key => $homeDistance ) {
-                $distanceInfo[$key]['home_distance_value'] = $homedistance->distance->value;
-                $distanceInfo[$key]['home_distance_text'] = $homedistance->distance->text;
+            foreach ($requestHomeDistanceData->rows[0]->elements as $key => $homeDistance ) {
+                $distanceInfo[$key]['home_distance_value'] = $homeDistance->distance->value;
+                $distanceInfo[$key]['home_distance_text'] = $homeDistance->distance->text;
             }
-            foreach ($requestWorkDistanceData->rows[0] as $key => $workDistance ) {
+            foreach ($requestWorkDistanceData->rows[0]->elements as $key => $workDistance ) {
                 $distanceInfo[$key]['work_distance_value'] = $workDistance->distance->value;
                 $distanceInfo[$key]['work_distance_text'] = $workDistance->distance->text;
             }
@@ -60,7 +62,7 @@ class GooglePlacesApi
      * @param string $destinationList
      * @return array
      */
-    private function makeRequest(string $originPoint, string $destinationList): array
+    private function makeRequest(string $originPoint, string $destinationList)
     {
         $data = file_get_contents($this->baseURL . '&origins=place_id:' . $originPoint
                                                           . '&destinations=place_id:'
@@ -79,12 +81,13 @@ class GooglePlacesApi
         $i = 0;
         $request ='';
         foreach ($users as $user){
-            if ($i = 0) {
+            if ($i === 0) {
                 $request = $user->getRoute()->getHomeLocation();
-            }
 
+            }
             $request .= '|place_id:' . $user->getRoute()->getHomeLocation();
             $i++;
+
         }
         return $request;
     }
@@ -98,10 +101,9 @@ class GooglePlacesApi
         $i = 0;
         $request ='';
         foreach ($users as $user){
-            if ($i = 0) {
+            if ($i === 0) {
                 $request = $user->getRoute()->getWorkLocation();
             }
-
             $request .= '|place_id:' . $user->getRoute()->getWorkLocation();
             $i++;
         }

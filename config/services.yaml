@@ -30,6 +30,3 @@ services:
     match_maker.service:
         class: App\Service\MatchMaker
         arguments: [ "@doctrine.orm.entity_manager" ]
-    match_data_service.service:
-        class: App\Service\MatchDataService
-        arguments: [ "@doctrine.orm.entity_manager" ]

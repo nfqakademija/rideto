@@ -6,14 +6,14 @@
 
             <h1>Matched Members</h1>
     {{ form(filter_form) }}
-                {% for user in users %}
-                    <div>{{ user.name }}
+                {% for match in matches %}
+                    <div>{{ match.name }}
                         <ul>
-                            <li>Amžius: {{ user.age }}</li>
-                            <li>Marsrutas: {{ user.routeDescription }}</li>
-                            <li>Atstumas tarp gyvenamu vietų: {{ matchDetails[user.id].home_distance }} km</li>
-                            <li>Atstumas tarp darbo vietų: {{ matchDetails[user.id].work_distance }} km</li>
-                            <li>Apie: {{ user.description }}</li>
+                            <li>Amžius: {{ match.age }}</li>
+                            <li>Marsrutas: {{ match.route }}</li>
+                            <li>Atstumas tarp gyvenamu vietų: {{ match.home_distance_text }}</li>
+                            <li>Atstumas tarp darbo vietų: {{ match.work_distance_text }}</li>
+                            <li>Apie: {{ match.description }}</li>
                         </ul>
                     </div>
 
