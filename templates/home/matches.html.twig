@@ -5,7 +5,7 @@
 {% block body %}
 
             <h1>Matched Members</h1>
-
+    {{ form(filter_form) }}
                 {% for user in users %}
                     <div>{{ user.name }}
                         <ul>
