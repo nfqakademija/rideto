@@ -2,9 +2,7 @@
 
 namespace App\Entity;
 
-
 use Doctrine\ORM\Mapping as ORM;
-
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\MatcherRepository")
@@ -96,6 +94,4 @@ class Matcher
 
         return $this;
     }
-
 }
-

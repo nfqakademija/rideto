@@ -25,9 +25,6 @@ final class Version20190508140104 extends AbstractMigration
         $this->addSql('CREATE TABLE route (id INT AUTO_INCREMENT NOT NULL, user_id INT NOT NULL, home_location VARCHAR(255) NOT NULL, work_location VARCHAR(255) NOT NULL, UNIQUE INDEX UNIQ_2C42079A76ED395 (user_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ENGINE = InnoDB');
         $this->addSql('ALTER TABLE route ADD CONSTRAINT FK_2C42079A76ED395 FOREIGN KEY (user_id) REFERENCES user (id)');
         $this->addSql('ALTER TABLE user CHANGE age age INT DEFAULT NULL');
-
-
-
     }
 
     public function down(Schema $schema) : void

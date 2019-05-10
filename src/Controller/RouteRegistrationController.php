@@ -8,7 +8,6 @@
 
 namespace App\Controller;
 
-
 use App\Entity\Route;
 use App\Entity\User;
 use App\Form\RouteRegisterType;
@@ -19,13 +18,12 @@ use Symfony\Component\HttpFoundation\Response;
 
 class RouteRegistrationController extends Controller
 {
-    public function index(MatchDataService $matchDataService, Request $request) {
-
+    public function index(MatchDataService $matchDataService, Request $request)
+    {
         $form = $this->createForm(RouteRegisterType::class);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()){
-
+        if ($form->isSubmitted() && $form->isValid()) {
             $user = new User();
             $user->setName($form->getData()['name']);
             $user->setAge($form->getData()['age']);
@@ -44,7 +42,7 @@ class RouteRegistrationController extends Controller
             $entityManager->persist($route);
             $entityManager->flush();
 
-            if($form->getData()['role'] === 'driver'){
+            if ($form->getData()['role'] === 'driver') {
                 $matchDataService->setDistances($user);
             }
 
@@ -56,8 +54,4 @@ class RouteRegistrationController extends Controller
 
         return $this->render('registration/route-register.html.twig', ['route_form' => $form->createView()]);
     }
-
-
-
-
 }

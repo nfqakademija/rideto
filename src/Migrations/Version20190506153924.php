@@ -23,7 +23,6 @@ final class Version20190506153924 extends AbstractMigration
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
         $this->addSql('CREATE TABLE matcher (id INT AUTO_INCREMENT NOT NULL, driver_id INT NOT NULL, client_id INT NOT NULL, work_distance INT NOT NULL, home_distance INT NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ENGINE = InnoDB');
-
     }
 
     public function down(Schema $schema) : void

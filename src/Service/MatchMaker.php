@@ -37,7 +37,7 @@ class MatchMaker
 
         if ($user->getRole() === 'driver') {
             $matches = $this->matchedClientsInfo($user->getId(), $distanceFromHome, $distanceFromWork);
-        } elseif ($user->getRole() === 'client'){
+        } elseif ($user->getRole() === 'client') {
             $matches = $this->matchedDriversInfo($user->getId(), $distanceFromHome, $distanceFromWork);
         }
 
@@ -50,8 +50,8 @@ class MatchMaker
         $repository = $this->em->getRepository(User::class);
         $results = [];
 
-        foreach($matches as $id => $info){
-            array_push($results,$repository->find($id));
+        foreach ($matches as $id => $info) {
+            array_push($results, $repository->find($id));
         }
 
         return $results;
@@ -87,5 +87,4 @@ class MatchMaker
         }
         return $matches;
     }
-
 }

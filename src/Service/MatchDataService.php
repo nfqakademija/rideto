@@ -3,7 +3,6 @@
 
 namespace App\Service;
 
-
 use App\Entity\Matcher;
 use App\Entity\User;
 use App\ExtrernalApi\GooglePlacesApi;
@@ -37,12 +36,9 @@ class MatchDataService
 
         $clients = $this->em->getRepository(User::class)->findBy(['role' => 'client']);
 
-        foreach($clients as $client){
-
-            $homeDistance = $placesAPI->getDistanceBetweenPoints($driver->getRoute()->getHomeLocation(),
-                $client->getRoute()->getHomeLocation());
-            $workDistance = $placesAPI->getDistanceBetweenPoints($driver->getRoute()->getWorkLocation(),
-                $client->getRoute()->getWorkLocation());
+        foreach ($clients as $client) {
+            $homeDistance = $placesAPI->getDistanceBetweenPoints($driver->getRoute()->getHomeLocation(), $client->getRoute()->getHomeLocation());
+            $workDistance = $placesAPI->getDistanceBetweenPoints($driver->getRoute()->getWorkLocation(), $client->getRoute()->getWorkLocation());
 
             $matchingData = new Matcher();
             $matchingData->setDriverId($driver->getId());
@@ -53,7 +49,6 @@ class MatchDataService
             $this->em->persist($matchingData);
 
             $this->em->flush();
-
         }
     }
 

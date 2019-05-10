@@ -8,7 +8,6 @@
 
 namespace App\ExtrernalApi;
 
-
 class GooglePlacesApi
 {
     private $key= 'AIzaSyAX-QC3A7Fn8_T76yNb-3JlyBfkl-NLc34';
@@ -37,7 +36,7 @@ class GooglePlacesApi
 
         $this->setStatus($requestData->status);
 
-        if($this->status === 'OK' || $this->status === 'ZERO_RESULTS'){
+        if ($this->status === 'OK' || $this->status === 'ZERO_RESULTS') {
             $distance = $requestData->rows[0]->elements[0]->distance->value;
         }
 
@@ -51,10 +50,12 @@ class GooglePlacesApi
      */
     private function makeRequest(string $pointA, string $pointB)
     {
-        $data = file_get_contents($this->baseURL . '&origins=place_id:' . $pointA . '&destinations=place_id:'. $pointB .'&key=' . $this->key);
+        $data = file_get_contents($this->baseURL . '&origins=place_id:' . $pointA
+                                                          . '&destinations=place_id:'
+                                                          . $pointB .'&key=' . $this->key);
 
         return json_decode($data);
     }
-
 }
+
 

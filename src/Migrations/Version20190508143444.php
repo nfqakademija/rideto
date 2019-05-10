@@ -51,10 +51,7 @@ final class Version20190508143444 extends AbstractMigration
                                (10, "Eh1PYmVsdSBnLiwgR2lyYWl0xJcsIExpdGh1YW5pYSIuKiwKFAoSCQmAkAsPH-dGEQux-PWplg9EEhQKEgnFyDDmGh_nRhFk-zBAoLXvDg", "ChIJyzilSw8i50YR6Vfzjt29zl4"), 
                                (11, "EiRLcmlhdcWhacWzIGdhdHbElywgS2F1bmFzLCBMaXRodWFuaWEiLiosChQKEgkZ8sHSCyLnRhGfSDfh7OcqPxIUChIJQ9NnsXAi50YRvIs3x-DRS2E", "EiNNYXJ2ZWzEl3MgZ2F0dsSXLCBLYXVuYXMsIExpdGh1YW5pYSIuKiwKFAoSCZdOZOL2IedGEexdndVRsZ2vEhQKEglD02excCLnRhG8izfH4NFLYQ")                 
                       ');
-
     }
-
-
 
     public function down(Schema $schema) : void
     {
