@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="40dac388-a9ab-454f-8a0f-84c101321777" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/MatchDataService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/MatchDataService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/MatchMaker.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/MatchMaker.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190506153924.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190506175417.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190508140104.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190508143444.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,25 +21,26 @@
     <session id="1482404918">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="php" value="14" />
+          <entry key="php" value="15" />
           <entry key="twig" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PHP" value="14" />
+          <entry key="PHP" value="15" />
           <entry key="Twig" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="550" />
+          <entry key="php" value="760" />
           <entry key="twig" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="550" />
+          <entry key="PHP" value="602" />
+          <entry key="SQL" value="158" />
           <entry key="Twig" value="6" />
         </counts>
       </usages-collector>
@@ -59,7 +62,7 @@
         <entry file="file://$PROJECT_DIR$/src/ExtrernalApi/GooglePlacesApi.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="754">
-              <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
+              <caret line="59" selection-start-line="59" selection-end-line="59" />
             </state>
           </provider>
         </entry>
@@ -77,7 +80,7 @@
         <entry file="file://$PROJECT_DIR$/src/Service/MatchMaker.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="471">
-              <caret line="75" column="5" lean-forward="true" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
+              <caret line="75" column="5" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
               <folding>
                 <element signature="e#115#138#0#PHP" expanded="true" />
               </folding>
@@ -88,35 +91,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Service/MatchDataService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="46" column="12" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190506175417.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="24" column="279" selection-start-line="24" selection-start-column="279" selection-end-line="24" selection-end-column="279" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190508140104.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="26" column="74" selection-start-line="26" selection-start-column="74" selection-end-line="26" selection-end-column="74" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190508143444.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="650">
-              <caret line="58" column="143" lean-forward="true" selection-start-line="58" selection-start-column="143" selection-end-line="58" selection-end-column="143" />
+            <state relative-caret-position="237">
+              <caret line="31" column="7" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -125,7 +101,7 @@
         <entry file="file://$PROJECT_DIR$/src/Controller/MatchController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="585">
-              <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+              <caret line="48" selection-start-line="48" selection-end-line="48" />
             </state>
           </provider>
         </entry>
@@ -134,16 +110,7 @@
         <entry file="file://$PROJECT_DIR$/src/Form/RouteRegisterType.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190506153924.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="24" column="273" selection-start-line="24" selection-start-column="273" selection-end-line="24" selection-end-column="273" />
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -204,14 +171,14 @@
         <option value="$PROJECT_DIR$/src/Controller/RouteRegistrationController.php" />
         <option value="$PROJECT_DIR$/src/Entity/Matcher.php" />
         <option value="$PROJECT_DIR$/src/Form/RouteRegisterType.php" />
-        <option value="$PROJECT_DIR$/src/Migrations/Version20190506153924.php" />
-        <option value="$PROJECT_DIR$/src/Migrations/Version20190506175417.php" />
-        <option value="$PROJECT_DIR$/src/Migrations/Version20190508140104.php" />
-        <option value="$PROJECT_DIR$/src/Migrations/Version20190508143444.php" />
         <option value="$PROJECT_DIR$/src/ExtrernalApi/GooglePlacesApi.php" />
         <option value="$PROJECT_DIR$/src/Controller/MatchController.php" />
         <option value="$PROJECT_DIR$/src/Service/MatchMaker.php" />
         <option value="$PROJECT_DIR$/src/Service/MatchDataService.php" />
+        <option value="$PROJECT_DIR$/src/Migrations/Version20190506153924.php" />
+        <option value="$PROJECT_DIR$/src/Migrations/Version20190506175417.php" />
+        <option value="$PROJECT_DIR$/src/Migrations/Version20190508140104.php" />
+        <option value="$PROJECT_DIR$/src/Migrations/Version20190508143444.php" />
       </list>
     </option>
   </component>
@@ -493,12 +460,12 @@
       <workItem from="1557335146751" duration="5799000" />
       <workItem from="1557401082646" duration="728000" />
       <workItem from="1557478795716" duration="41000" />
-      <workItem from="1557478842552" duration="2111000" />
+      <workItem from="1557478842552" duration="2770000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79002000" />
+    <option name="totallyTimeSpent" value="79661000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -511,7 +478,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="813" y="23" width="2104" height="1225" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4990758" visible="true" weight="0.14500485" />
       <window_info id="Structure" order="1" sideWeight="0.5009242" side_tool="true" weight="0.15808298" />
@@ -543,11 +509,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/yarn.lock">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1265" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/apple-touch-icon.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -751,66 +712,69 @@
     <entry file="file://$PROJECT_DIR$/src/Form/RouteRegisterType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190506153924.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="24" column="273" selection-start-line="24" selection-start-column="273" selection-end-line="24" selection-end-column="273" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190506175417.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="24" column="279" selection-start-line="24" selection-start-column="279" selection-end-line="24" selection-end-column="279" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190508140104.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="26" column="74" selection-start-line="26" selection-start-column="74" selection-end-line="26" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190508143444.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="58" column="143" lean-forward="true" selection-start-line="58" selection-start-column="143" selection-end-line="58" selection-end-column="143" />
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ExtrernalApi/GooglePlacesApi.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="754">
-          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/MatchController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
-          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Service/MatchMaker.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="471">
-          <caret line="75" column="5" lean-forward="true" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
+          <caret line="75" column="5" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
           <folding>
             <element signature="e#115#138#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Service/MatchDataService.php">
+    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190506175417.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
-          <caret line="46" column="12" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
+          <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190508140104.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="35" column="28" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190506153924.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190508143444.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="22" column="74" lean-forward="true" selection-start-line="22" selection-start-column="74" selection-end-line="22" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190510094718.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Service/MatchDataService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="31" column="7" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
         </state>
       </provider>
     </entry>
