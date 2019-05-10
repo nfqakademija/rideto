@@ -57,5 +57,3 @@ class GooglePlacesApi
         return json_decode($data);
     }
 }
-
-

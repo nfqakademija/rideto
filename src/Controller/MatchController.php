@@ -28,8 +28,11 @@ class MatchController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $matches= $matchMaker->findMatches($user, $form->getData()['home_distance'],
-                                                     $form->getData()['work_distance']);
+            $matches= $matchMaker->findMatches(
+                $user,
+                $form->getData()['home_distance'],
+                $form->getData()['work_distance']
+            );
         } else {
             $matches= $matchMaker->findMatches($user, 100000, 100000);
         }
