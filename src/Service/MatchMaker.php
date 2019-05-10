@@ -64,7 +64,10 @@ class MatchMaker
 
         $matches = [];
         foreach ($matchData as $match) {
-            if ($match->getHomeDistance() <= $distanceFromHome && $match->getWorkDistance() <= $distanceFromWork && $match->getDriverId() === $userId) {
+            if ($match->getHomeDistance() <= $distanceFromHome
+                && $match->getWorkDistance() <= $distanceFromWork
+                && $match->getDriverId() === $userId
+            ) {
                 $matches[$match->getClientId()] = ['home_distance' => round($match->getHomeDistance()/1000, 2),
                     'work_distance' => round($match->getWorkDistance()/1000, 2)];
             }
@@ -79,7 +82,10 @@ class MatchMaker
 
         $matches = [];
         foreach ($matchData as $match) {
-            if ($match->getHomeDistance() <= $distanceFromHome && $match->getWorkDistance() <= $distanceFromWork && $match->getClientId() === $userId) {
+            if ($match->getHomeDistance() <= $distanceFromHome
+                && $match->getWorkDistance() <= $distanceFromWork
+                && $match->getClientId() === $userId
+            ) {
                 $matches[$match->getDriverId()] = ['home_distance' => round($match->getHomeDistance() / 1000, 2),
                                                    'work_distance' => round($match->getWorkDistance() / 1000, 2)];
             }

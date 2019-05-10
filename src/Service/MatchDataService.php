@@ -37,8 +37,14 @@ class MatchDataService
         $clients = $this->em->getRepository(User::class)->findBy(['role' => 'client']);
 
         foreach ($clients as $client) {
-            $homeDistance = $placesAPI->getDistanceBetweenPoints($driver->getRoute()->getHomeLocation(), $client->getRoute()->getHomeLocation());
-            $workDistance = $placesAPI->getDistanceBetweenPoints($driver->getRoute()->getWorkLocation(), $client->getRoute()->getWorkLocation());
+            $homeDistance = $placesAPI->getDistanceBetweenPoints(
+                $driver->getRoute()->getHomeLocation(),
+                $client->getRoute()->getHomeLocation()
+            );
+            $workDistance = $placesAPI->getDistanceBetweenPoints(
+                $driver->getRoute()->getWorkLocation(),
+                $client->getRoute()->getWorkLocation()
+            );
 
             $matchingData = new Matcher();
             $matchingData->setDriverId($driver->getId());
