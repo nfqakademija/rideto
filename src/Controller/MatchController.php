@@ -44,5 +44,5 @@ class MatchController extends Controller
                                                               'title' => 'Matches',
                                                               'filter_form' => $form->createView()
                                                               ]);
-    }
+    }g
 }
