@@ -70,7 +70,7 @@ class MatchMaker
                             ];
         }
         return $matches;
-      }
+    }
 
     /**
      * @param $client
