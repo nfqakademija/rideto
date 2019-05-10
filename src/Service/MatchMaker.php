@@ -50,7 +50,8 @@ class MatchMaker
      * @param $driver
      * @return array
      */
-    private function allClientsDistances($driver){
+    private function allClientsDistances($driver)
+    {
         $matches = [];
         $placesApi = new GooglePlacesApi();
         $clients  =  $clients = $this->em->getRepository(User::class)->findBy(['role' => 'client']);
@@ -68,14 +69,15 @@ class MatchMaker
                               'home_distance_text' => $distanceData[$key]['home_distance_text']
                             ];
         }
-            return $matches;
+        return $matches;
       }
 
     /**
      * @param $client
      * @return array
      */
-    private function allDriversDistances($client){
+    private function allDriversDistances($client)
+    {
         $matches = [];
         $placesApi = new GooglePlacesApi();
         $drivers  = $this->em->getRepository(User::class)->findBy(['role' => 'driver']);

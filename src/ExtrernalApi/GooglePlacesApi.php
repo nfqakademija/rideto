@@ -44,15 +44,14 @@ class GooglePlacesApi
         $this->setStatus($requestHomeDistanceData->status === 'OK' && $requestWorkDistanceData->status === 'OK');
 
         if ($this->status === true) {
-            foreach ($requestHomeDistanceData->rows[0]->elements as $key => $homeDistance ) {
+            foreach ($requestHomeDistanceData->rows[0]->elements as $key => $homeDistance){
                 $distanceInfo[$key]['home_distance_value'] = $homeDistance->distance->value;
                 $distanceInfo[$key]['home_distance_text'] = $homeDistance->distance->text;
             }
-            foreach ($requestWorkDistanceData->rows[0]->elements as $key => $workDistance ) {
+            foreach ($requestWorkDistanceData->rows[0]->elements as $key => $workDistance){
                 $distanceInfo[$key]['work_distance_value'] = $workDistance->distance->value;
                 $distanceInfo[$key]['work_distance_text'] = $workDistance->distance->text;
             }
-
         }
         return $distanceInfo;
     }
@@ -76,18 +75,16 @@ class GooglePlacesApi
      * @param array $users
      * @return string
      */
-    private function joinAllHomeLocations (array $users) :string
+    private function joinAllHomeLocations(array $users) :string
     {
         $i = 0;
         $request ='';
         foreach ($users as $user){
             if ($i === 0) {
                 $request = $user->getRoute()->getHomeLocation();
-
             }
             $request .= '|place_id:' . $user->getRoute()->getHomeLocation();
             $i++;
-
         }
         return $request;
     }
@@ -96,7 +93,7 @@ class GooglePlacesApi
      * @param array $users
      * @return string
      */
-    private function joinAllWorkLocations (array $users) :string
+    private function joinAllWorkLocations(array $users) :string
     {
         $i = 0;
         $request ='';
