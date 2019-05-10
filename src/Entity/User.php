@@ -1,136 +1,134 @@
 <?php
-// src/Entity/User.php
 
 namespace App\Entity;
 
-use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Table(name="fos_user")
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
-class User extends BaseUser
+class User
 {
     /**
-     * @ORM\Id
+     * @ORM\Id()
+     * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected $id;
+    private $id;
 
     /**
-     * @ORM\Column(type="string", name="work_location")
+     * @ORM\Column(type="string", length=255)
      */
-    protected $workLocation;
+    private $name;
 
     /**
-     * @ORM\Column(type="string", name="home_location")
+     * @ORM\Column(type="integer", nullable=true)
      */
-    protected $homeLocation;
+    private $age;
 
     /**
-     * @ORM\OneToOne(targetEntity="Workshift")
+     * @ORM\Column(type="string", length=255)
      */
-    protected $workShift;
+    private $description;
 
-    public function __construct()
-    {
-        parent::__construct();
-        // your own logic
-    }
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $role;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $routeDescription;
 
     /**
      * @return mixed
      */
-    public function getId()
+    public function getRouteDescription()
+    {
+        return $this->routeDescription;
+    }
+
+    /**
+     * @param mixed $routeDescription
+     */
+    public function setRouteDescription($routeDescription): void
+    {
+        $this->routeDescription = $routeDescription;
+    }
+
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\Route", mappedBy="user", cascade={"persist", "remove"})
+     */
+    private $route;
+
+    public function getId(): ?int
     {
         return $this->id;
     }
 
-    /**
-     * @param mixed $id
-     * @return User
-     */
-    public function setId($id)
+    public function getName(): ?string
     {
-        $this->id = $id;
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
+
         return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getWorkShift()
+    public function getAge(): ?int
     {
-        return $this->workShift;
+        return $this->age;
     }
 
-    /**
-     * @param mixed $workShift
-     * @return User
-     */
-    public function setWorkShift($workShift)
+    public function setAge(?int $age): self
     {
-        $this->workShift = $workShift;
+        $this->age = $age;
+
         return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getHomeLocation()
+    public function getDescription(): ?string
     {
-        return $this->homeLocation;
+        return $this->description;
     }
 
-    /**
-     * @param mixed $homeLocation
-     * @return User
-     */
-    public function setHomeLocation($homeLocation)
+    public function setDescription(string $description): self
     {
-        $this->homeLocation = $homeLocation;
+        $this->description = $description;
+
         return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getWorkLocation()
+    public function getRole(): ?string
     {
-        return $this->workLocation;
+        return $this->role;
     }
 
-    /**
-     * @param mixed $workLocation
-     * @return User
-     */
-    public function setWorkLocation($workLocation)
+    public function setRole(string $role): self
     {
-        $this->workLocation = $workLocation;
+        $this->role = $role;
+
         return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getWorkShiftId()
+    public function getRoute(): ?Route
     {
-        return $this->workShiftId;
+        return $this->route;
     }
 
-    /**
-     * @param mixed $workShiftId
-     * @return User
-     */
-    public function setWorkShiftId($workShiftId)
+    public function setRoute(Route $route): self
     {
-        $this->workShiftId = $workShiftId;
+        $this->route = $route;
+
+        // set the owning side of the relation if necessary
+        if ($this !== $route->getUser()) {
+            $route->setUser($this);
+        }
+
         return $this;
     }
-
-
-
-
 }

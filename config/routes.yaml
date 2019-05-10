@@ -2,6 +2,11 @@
 #    path: /
 #    controller: App\Controller\DefaultController::index
 registerRoute:
-  path: /register-route
+  path: /reg
   controller: App\Controller\RouteRegistrationController:index
-
+saveRoute:
+  path: /route-save
+  controller: App\Controller\RouteRegistrationController:store
+matches:
+  path: /matches
+  controller: App\Controller\MatchController:index

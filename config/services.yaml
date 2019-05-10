@@ -26,3 +26,10 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    match_maker.service:
+        class: App\Service\MatchMaker
+        arguments: [ "@doctrine.orm.entity_manager" ]
+    match_data_service.service:
+        class: App\Service\MatchDataService
+        arguments: [ "@doctrine.orm.entity_manager" ]
