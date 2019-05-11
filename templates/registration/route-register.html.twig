@@ -21,7 +21,40 @@
 
 </style>
 
-    {{ form(route_form) }}
+{#    {{ form(route_form) }}#}
+    {{ form_start(route_form, {'attr': {'class': 'route-reg'}}) }}
+    <div class="form-group">
+        {{ form_label(route_form.name) }}
+        {{ form_widget(route_form.name) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(route_form.age) }}
+        {{ form_widget(route_form.age) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(route_form.role) }}
+        {{ form_widget(route_form.role) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(route_form.route_description) }}
+        {{ form_widget(route_form.route_description) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(route_form.origin_input) }}
+        {{ form_widget(route_form.origin_input) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(route_form.destination_input) }}
+        {{ form_widget(route_form.destination_input) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(route_form.description) }}
+        {{ form_widget(route_form.description) }}
+    </div>
+    {{ form_widget(route_form.save) }}
+
+    {{ form_end(route_form) }}
+
 
 <div id="map"></div>
 

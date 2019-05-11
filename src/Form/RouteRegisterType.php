@@ -16,26 +16,34 @@ class RouteRegisterType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', TextType::class, ['label' => 'Vardas'])
-            ->add('age', NumberType::class, ['label' => 'Amžius'])
+            ->add('name', TextType::class, ['label' => 'Vardas', 'attr' => ['class' => 'form-control']])
+            ->add('age', NumberType::class, ['label' => 'Amžius', 'attr' => ['class' => 'form-control']] )
             ->add('role', ChoiceType::class, [
                'choices' => [
                    'Vairuotojas' => 'driver',
                    'Keleivis' => 'client',
                ],
+                'attr' => ['class' => 'form-control'],
                 'label' => 'Profilio tipas'
             ])
-            ->add('route_description', TextareaType::class)
-            ->add('origin-input', TextType::class, [
-                'attr' => ['class' => 'some-Css-Class'],
+            ->add('route_description', TextareaType::class, [
+                'attr' => ['class' => 'form-control']
             ])
-            ->add('destination-input', TextType::class, [
-                'attr' => ['class' => 'some-Css-Class'],
+            ->add('origin_input', TextType::class, [
+                'attr' => ['class' => 'form-control']
+            ])
+            ->add('destination_input', TextType::class, [
+                'attr' => ['class' => 'form-control']
             ])
             ->add('home_location', HiddenType::class)
             ->add('work_location', HiddenType::class)
-            ->add('description', TextareaType::class)
-            ->add('save', SubmitType::class, ['label' => 'Saugoti'])
+            ->add('description', TextareaType::class, [
+                'attr' => ['class' => 'form-control']
+            ])
+            ->add('save', SubmitType::class, [
+                'label' => 'Saugoti',
+                'attr' => ['class' => 'btn btn-primary mb-2']
+                ])
         ;
     }
 }
