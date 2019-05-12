@@ -3,61 +3,48 @@
 {% block title %}Route Registration{% endblock %}
 
 {% block body %}
-    <div class="nfq-academy">Route Registration</div>
+    <section class="section-route-reg">
+        {{ include('partials/nav.html.twig') }}
 
-<style>
-    /* Always set the map height explicitly to define the size of the div
-     * element that contains the map. */
-    #map {
-        height: 100%;
-    }
-    /* Optional: Makes the sample page fill the window. */
-    html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
+        {{ form_start(route_form, {'attr': {'class': 'route-reg'}}) }}
+            <div class="form-group">
+                {{ form_label(route_form.name) }}
+                {{ form_widget(route_form.name) }}
+            </div>
+            <div class="mdc-text-field username">
+                <input class="mdc-text-field__input">
+                <div class="mdc-line-ripple"></div>
+                <label class="mdc-floating-label">Name</label>
+            </div>
+            <div class="form-group">
+                {{ form_label(route_form.age) }}
+                {{ form_widget(route_form.age) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(route_form.role) }}
+                {{ form_widget(route_form.role) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(route_form.route_description) }}
+                {{ form_widget(route_form.route_description) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(route_form.origin_input) }}
+                {{ form_widget(route_form.origin_input) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(route_form.destination_input) }}
+                {{ form_widget(route_form.destination_input) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(route_form.description) }}
+                {{ form_widget(route_form.description) }}
+            </div>
+            {{ form_widget(route_form.save) }}
+        {{ form_end(route_form) }}
 
-
-</style>
-
-{#    {{ form(route_form) }}#}
-    {{ form_start(route_form, {'attr': {'class': 'route-reg'}}) }}
-    <div class="form-group">
-        {{ form_label(route_form.name) }}
-        {{ form_widget(route_form.name) }}
-    </div>
-    <div class="form-group">
-        {{ form_label(route_form.age) }}
-        {{ form_widget(route_form.age) }}
-    </div>
-    <div class="form-group">
-        {{ form_label(route_form.role) }}
-        {{ form_widget(route_form.role) }}
-    </div>
-    <div class="form-group">
-        {{ form_label(route_form.route_description) }}
-        {{ form_widget(route_form.route_description) }}
-    </div>
-    <div class="form-group">
-        {{ form_label(route_form.origin_input) }}
-        {{ form_widget(route_form.origin_input) }}
-    </div>
-    <div class="form-group">
-        {{ form_label(route_form.destination_input) }}
-        {{ form_widget(route_form.destination_input) }}
-    </div>
-    <div class="form-group">
-        {{ form_label(route_form.description) }}
-        {{ form_widget(route_form.description) }}
-    </div>
-    {{ form_widget(route_form.save) }}
-
-    {{ form_end(route_form) }}
-
-
-<div id="map"></div>
-
+        <div id="map"></div>
+    </section>
 <script>
     // This example requires the Places library. Include the libraries=places
     // parameter when you first load the API. For example:
@@ -67,7 +54,7 @@
     function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
             mapTypeControl: false,
-            center: {lat: -33.8688, lng: 151.2195},
+            center: {lat: 54.897343, lng: 23.882552},
             zoom: 13
         });
 
@@ -86,8 +73,8 @@
         this.directionsDisplay = new google.maps.DirectionsRenderer;
         this.directionsDisplay.setMap(map);
 
-        var originInput = document.getElementById('route_register_origin-input');
-        var destinationInput = document.getElementById('route_register_destination-input');
+        var originInput = document.getElementById('route_register_origin_input');
+        var destinationInput = document.getElementById('route_register_destination_input');
 
 
         var originAutocomplete = new google.maps.places.Autocomplete(originInput);

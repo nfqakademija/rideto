@@ -40,4 +40,10 @@
       }
     }
   }
+  &.s {
+    top: 0;
+    background-color: $color__green-primary;
+    z-index: 1000;
+    padding: 10px 80px;
+  }
 }
