@@ -21,7 +21,7 @@ class MatchFilterType extends AbstractType
                     'iki 2km' => '2000',
                     'iki 1km' => '1000',
                 ],
-                'label' => 'Atstumas nuo namu'
+                'attr' => ['class' => 'mdc-select__native-control'],
             ])
             ->add('work_distance', ChoiceType::class, [
                 'choices' => [
@@ -31,9 +31,11 @@ class MatchFilterType extends AbstractType
                     'iki 2km' => '2000',
                     'iki 1km' => '1000',
                 ],
-                'label' => 'Atstumas nuo darbo'
+                'attr' => ['class' => 'mdc-select__native-control'],
             ])
-            ->add('filter', SubmitType::class, ['label' => 'Filtruoti'])
+            ->add('filter', SubmitType::class, [
+                'label' => 'Filtruoti',
+                'attr' => ['class' => 'mdc-button mdc-button--outlined']])
         ;
     }
 

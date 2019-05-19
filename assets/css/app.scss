@@ -1,12 +1,26 @@
 // customize some Bootstrap variables
 $primary: darken(#428bca, 20%);
 
+// color pallet
+$color__blue-primary: #4098D9;
+$color__blue-secondary: #2AC9E8;
+$color__blue-third: #3BFFEA;
+$color__green-primary: #20E89A;
+$color__green-secondary: #44FF82;
+
 // the ~ allows you to reference things in node_modules
-@import "~bootstrap/scss/bootstrap";
-@import "components/all";
+//@import "~bootstrap/scss/bootstrap";
+
+
+@import "global/normalize";
 @import "sections/all";
+@import "components/all";
+:root {
+  --mdc-theme-primary: black;
+  --mdc-theme-error: #ff9c9c;
+}
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 

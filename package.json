@@ -1,5 +1,7 @@
 {
     "devDependencies": {
+        "@material/select": "^2.1.1",
+        "@material/textfield": "^1.0.1",
         "@symfony/webpack-encore": "^0.26.0",
         "bootstrap": "^4.3.1",
         "core-js": "^3.0.0",
@@ -16,5 +18,9 @@
         "dev": "encore dev",
         "watch": "encore dev --watch",
         "build": "encore production --progress"
+    },
+    "dependencies": {
+        "@material/floating-label": "^1.1.0",
+        "material-components-web": "^2.1.1"
     }
 }
