@@ -19,7 +19,9 @@ if(document.querySelector('.homedist')) {
 if(document.querySelector('.username')){
     const username = new MDCTextField(document.querySelector('.username'));
     const age = new MDCTextField(document.querySelector('.age'));
+    const phone = new MDCTextField(document.querySelector('.phone'));
     const routeDesc = new MDCTextField(document.querySelector('.route-desc'));
+    const timeDesc = new MDCTextField(document.querySelector('.time-desc'));
     const origin = new MDCTextField(document.querySelector('.origin'));
     const dest = new MDCTextField(document.querySelector('.destination'));
 }

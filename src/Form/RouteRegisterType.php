@@ -37,9 +37,12 @@ class RouteRegisterType extends AbstractType
             ])
             ->add('home_location', HiddenType::class)
             ->add('work_location', HiddenType::class)
-//            ->add('description', TextareaType::class, [
-//                'attr' => ['class' => 'mdc-text-field__input']
-//            ])
+            ->add('description', TextareaType::class, [
+                'attr' => ['class' => 'mdc-text-field__input']
+            ])
+            ->add('phone', NumberType::class, [
+                'attr' => ['class' => 'mdc-text-field__input']
+            ])
             ->add('save', SubmitType::class, [
                 'label' => 'Saugoti',
                 'attr' => ['class' => 'mdc-button mdc-button--outlined']

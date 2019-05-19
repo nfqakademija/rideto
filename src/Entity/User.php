@@ -42,6 +42,11 @@ class User
     private $routeDescription;
 
     /**
+     * @ORM\Column(type="integer", length=255)
+     */
+    private $phone;
+
+    /**
      * @return mixed
      */
     public function getRouteDescription()
@@ -130,5 +135,21 @@ class User
         }
 
         return $this;
+    }
+
+    /**
+     * @param mixed $phone
+     */
+    public function setPhone($phone): void
+    {
+        $this->phone = $phone;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPhone()
+    {
+        return $this->phone;
     }
 }
