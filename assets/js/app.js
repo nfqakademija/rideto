@@ -22,6 +22,7 @@ if(document.querySelector('.username')){
     const routeDesc = new MDCTextField(document.querySelector('.route-desc'));
     const origin = new MDCTextField(document.querySelector('.origin'));
     const dest = new MDCTextField(document.querySelector('.destination'));
+    const sel = new MDCSelect(document.querySelector('.mdc-select'));
 }
 
 
