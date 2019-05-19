@@ -3,22 +3,51 @@
 {% block title %}{{ title }}{% endblock %}
 
 {% block body %}
-
-            <h1>Matched Members</h1>
-    {{ form(filter_form) }}
-                {% for match in matches %}
-                    <div>{{ match.name }}
-                        <ul>
-                            <li>Amžius: {{ match.age }}</li>
-                            <li>Marsrutas: {{ match.route }}</li>
-                            <li>Atstumas tarp gyvenamu vietų: {{ match.home_distance_text }}</li>
-                            <li>Atstumas tarp darbo vietų: {{ match.work_distance_text }}</li>
-                            <li>Apie: {{ match.description }}</li>
-                        </ul>
+    {{ include('partials/nav.html.twig') }}
+    <section class="matches">
+        <aside class="filter">
+            <div class="filter-header">Ieškok važiuojančių panašiu maršrutu</div>
+            {{ form_start(filter_form, {'attr': {'class': 'filter-form'}}) }}
+                <div class="mdc-select homedist">
+                    <i class="mdc-select__dropdown-icon"></i>
+                    {{ form_widget(filter_form.home_distance) }}
+                    <label class="mdc-floating-label">asd</label>
+                    <div class="mdc-line-ripple"></div>
+                </div>
+                <div class="mdc-select workdist">
+                    <i class="mdc-select__dropdown-icon"></i>
+                    {{ form_widget(filter_form.work_distance) }}
+                    <label class="mdc-floating-label">Atstumas tarp darbo vietu</label>
+                    <div class="mdc-line-ripple"></div>
+                </div>
+                {{ form_widget(filter_form.filter) }}
+            {{ form_end(filter_form) }}
+        </aside>
+        <div class="matched-users">
+            {% for match in matches %}
+                <div class="user">
+                    <div class="user-image">
+                        <i class="fas fa-user-alt"></i>
                     </div>
+                    <div class="user-info">
+                        {{ match.name }}, {{ match.age }}
+                    </div>
+                    <div class="user-block">
+                        <div class="user-block__placeholder">Laikas</div>
+                        <div class="user-block__text"><i class="fas fa-clock"></i>{{ match.description }}</div>
+                    </div>
+                    <div class="user-block">
+                        <div class="user-block__placeholder">Atstumas tarp namų</div>
+                        <div class="user-block__text"><i class="far fa-circle"></i>{{ match.home_distance_text }}</div>
+                    </div>
+                    <div class="user-block">
+                        <div class="user-block__placeholder">Atstumas tarp darbo vietų</div>
+                        <div class="user-block__text"><i class="fas fa-map-marker"></i>{{ match.work_distance_text }}</div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
 
-
-                {% endfor %}
-
+    </section>
 
 {% endblock %}

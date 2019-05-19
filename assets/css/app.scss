@@ -9,12 +9,18 @@ $color__green-primary: #20E89A;
 $color__green-secondary: #44FF82;
 
 // the ~ allows you to reference things in node_modules
-@import "~bootstrap/scss/bootstrap";
+//@import "~bootstrap/scss/bootstrap";
+
+
+@import "global/normalize";
 @import "sections/all";
 @import "components/all";
-
+:root {
+  --mdc-theme-primary: black;
+  --mdc-theme-error: #ff9c9c;
+}
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 

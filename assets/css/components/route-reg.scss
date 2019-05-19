@@ -1,4 +1,60 @@
-.route-reg {
+
+.route-registration {
   z-index: 10;
   flex: 0 0 30%;
+  padding: 50px;
+  &__header {
+    font-size: 26px;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  &__form {
+    & > div {
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      display: flex;
+
+      .username {
+        margin-right: 5px;
+        flex: 0 0 70%;
+      }
+    }
+
+    & .route-desc {
+      width: 70%;
+      height: 75px;
+    }
+
+    & .role {
+      display: block;
+      width: 70%;
+    }
+
+    .origin, .destination {
+      width: 100%;
+    }
+
+    & .mdc-text-field-helper-line {
+      max-width: 70%;
+    }
+    & .mdc-button--outlined:not(:disabled) {
+      border-color: $color__blue-primary;
+    }
+    & .mdc-button:not(:disabled) {
+      color: $color__blue-primary;
+    }
+  }
+}
+
+.mdc-text-field:not(.mdc-text-field--disabled) {
+  background-color: white;
+}
+//.mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
+//  color: black;
+//}
+.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
+  color: #4098D9;
 }
