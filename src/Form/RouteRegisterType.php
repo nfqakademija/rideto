@@ -17,7 +17,7 @@ class RouteRegisterType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, ['label' => 'Vardas', 'attr' => ['class' => 'mdc-text-field__input']])
-            ->add('age', NumberType::class, ['label' => 'Amžius', 'attr' => ['class' => 'mdc-text-field__input']] )
+            ->add('age', NumberType::class, ['label' => 'Amžius', 'attr' => ['class' => 'mdc-text-field__input']])
             ->add('role', ChoiceType::class, [
                'choices' => [
                    'Vairuotojas' => 'driver',

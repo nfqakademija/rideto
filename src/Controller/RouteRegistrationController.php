@@ -43,7 +43,6 @@ class RouteRegistrationController extends Controller
             $entityManager->flush();
 
             return $this->redirect('matches?user=' . $user->getId());
-
         }
 
         return $this->render('registration/route-register.html.twig', ['route_form' => $form->createView()]);
