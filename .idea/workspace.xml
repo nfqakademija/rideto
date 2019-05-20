@@ -388,12 +388,6 @@
     </option>
   </component>
   <component name="RunManager" selected="PHP Script.GooglePlacesApi.php">
-    <configuration name="GooglePlacesApi.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/src/ExtrernalApi/GooglePlacesApi.php">
-      <method v="2" />
-    </configuration>
-    <configuration name="Matcher.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/src/Entity/Matcher.php">
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="PHP Script.GooglePlacesApi.php" />
       <item itemvalue="PHP Script.Matcher.php" />

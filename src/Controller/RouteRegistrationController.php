@@ -29,6 +29,7 @@ class RouteRegistrationController extends Controller
             $user->setDescription($form->getData()['description']);
             $user->setRouteDescription($form->getData()['route_description']);
             $user->setRole($form->getData()['role']);
+            $user->setPhone($form->getData()['phone']);
 
             $route = new Route();
             $route->setHomeLocation($form->getData()['home_location']);
@@ -41,10 +42,8 @@ class RouteRegistrationController extends Controller
             $entityManager->persist($route);
             $entityManager->flush();
 
-            return new Response(
-                'Saved new user with id: '.$user->getId()
-                .' and new route with id: '.$route->getId()
-            );
+            return $this->redirect('matches?user=' . $user->getId());
+
         }
 
         return $this->render('registration/route-register.html.twig', ['route_form' => $form->createView()]);
