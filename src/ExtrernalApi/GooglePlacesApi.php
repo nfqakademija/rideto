@@ -82,9 +82,10 @@ class GooglePlacesApi
         foreach ($users as $user) {
             if ($i === 0) {
                 $request = $user->getRoute()->getHomeLocation();
+                $i++;
+            } else {
+                $request .= '|place_id:' . $user->getRoute()->getHomeLocation();
             }
-            $request .= '|place_id:' . $user->getRoute()->getHomeLocation();
-            $i++;
         }
         return $request;
     }
@@ -100,9 +101,10 @@ class GooglePlacesApi
         foreach ($users as $user) {
             if ($i === 0) {
                 $request = $user->getRoute()->getWorkLocation();
+                $i++;
+            } else {
+                $request .= '|place_id:' . $user->getRoute()->getWorkLocation();
             }
-            $request .= '|place_id:' . $user->getRoute()->getWorkLocation();
-            $i++;
         }
         return $request;
     }
