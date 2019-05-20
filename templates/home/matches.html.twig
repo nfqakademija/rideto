@@ -33,21 +33,42 @@
                         {{ match.name }}, {{ match.age }}
                     </div>
                     <div class="user-block">
-                        <div class="user-block__placeholder">Laikas</div>
-                        <div class="user-block__text"><i class="fas fa-clock"></i>{{ match.description }}</div>
+                        <div class="user-block__placeholder">Atstumas tarp jūsų namų</div>
+                        <div class="user-block__text"><i class="fa fa-home"></i>{{ match.home_distance_text }}</div>
                     </div>
                     <div class="user-block">
-                        <div class="user-block__placeholder">Atstumas tarp namų</div>
-                        <div class="user-block__text"><i class="far fa-circle"></i>{{ match.home_distance_text }}</div>
-                    </div>
-                    <div class="user-block">
-                        <div class="user-block__placeholder">Atstumas tarp darbo vietų</div>
+                        <div class="user-block__placeholder">Atstumas tarp jūsų darbo vietų</div>
                         <div class="user-block__text"><i class="fas fa-map-marker"></i>{{ match.work_distance_text }}</div>
+                    </div>
+                    <div class="user-block hidden" id="phone-block-{{ match.id }}">
+                        <div class="user-block__placeholder">Telefonas</div>
+                        <div class="user-block__text"><i class="fa fa-phone"></i>{{ match.phone }}</div>
+                    </div>
+                    <div class="user-block phone-btn">
+                        <button onclick="showPhoneNumber()" class="mdc-button mdc-button--outlined" value="{{ match.id }}">Susisiekite</button>
+                    </div>
+                    <div class="user-description">
+                        <div class="user-block__text"><i class="fas fa-clock"></i>Laikas: {{ match.description }}</div>
+                    </div>
+                    <div class="line-break"></div>
+                    <div class="user-description">
+                        <div class="user-block__text"><i class="fas fa-road"></i>Maršrutas: {{ match.route }}</div>
                     </div>
                 </div>
             {% endfor %}
         </div>
 
     </section>
+<script>
+    function showPhoneNumber(){
+        let button = event.target;
+        let id = button.getAttribute("value");
+        console.log('click');
+        let phone = document.getElementById("phone-block-" + id);
+        phone.classList.remove("hidden");
+        button.style.display = "none";
+
+    }
+</script>
 
 {% endblock %}

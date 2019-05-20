@@ -1,6 +1,8 @@
 section.matches {
   display: flex;
-
+  & .hidden {
+    display: none!important;
+  }
   & .filter {
     flex: 0 0 30%;
     display: flex;
@@ -37,10 +39,10 @@ section.matches {
     & .user {
       position: relative;
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
       width: 90%;
-      height: 125px;
       background: #efefef;
       margin: 0 auto;
       margin-bottom: 20px;
@@ -70,7 +72,7 @@ section.matches {
         text-transform: capitalize;
       }
       &-block {
-        width: 16%;
+        width: 25%;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -82,12 +84,22 @@ section.matches {
           font-size: 14px;
           margin-bottom: 8px;
         }
-        .far, .fas {
+        .far, .fas, .fa {
+          margin-right: 6px;
+          color: $color__blue-primary;
+        }
+      }
+      &-description {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        margin: 1rem auto;
+        .far, .fas, .fa {
           margin-right: 6px;
           color: $color__blue-primary;
         }
       }
     }
-
   }
 }
