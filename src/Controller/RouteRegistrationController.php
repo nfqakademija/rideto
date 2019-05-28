@@ -24,22 +24,8 @@ class RouteRegistrationController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $user = $form->getData();
-//            $user->setName($form->getData()['name']);
-//            $user->setAge($form->getData()['age']);
-//            $user->setDescription($form->getData()['description']);
-//            $user->setRouteDescription($form->getData()['route_description']);
-//            $user->setRole($form->getData()['role']);
-//            $user->setPhone($form->getData()['phone']);
-//
-//            $route = new Route();
-//            $route->setHomeLocation($form->getData()['home_location']);
-//            $route->setWorkLocation($form->getData()['work_location']);
-//
-//            $user->setRoute($route);
-
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
-            //$entityManager->persist($route);
             $entityManager->flush();
 
             return $this->redirect('matches?user=' . $user->getId());

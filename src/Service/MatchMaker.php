@@ -115,15 +115,8 @@ class MatchMaker
     }
 
     private function percent($distance, $selected_distance){
-        if($selected_distance <= 1000){
-            $percent = 100 * round($selected_distance/$distance, 2);
-        }
-        if($selected_distance <= 10000){
-            $percent = 10 * round($selected_distance/$distance,2);
-        }
-        if($selected_distance <= 100000){
-            $percent = round($selected_distance/$distance,2);
-        }
+        $percent = 1 - ($distance/$selected_distance);
+        $percent = round($percent * 100,1);
         return $percent;
     }
 
