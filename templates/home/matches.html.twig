@@ -34,11 +34,11 @@
                     </div>
                     <div class="user-block">
                         <div class="user-block__placeholder">Atstumas tarp jūsų namų</div>
-                        <div class="user-block__text"><i class="fa fa-home"></i>{{ match.home_distance_text }}</div>
+                        <div class="user-block__text"><i class="fa fa-home"></i>{{ match.home_distance_text }} {{ match.home_percent }}</div>
                     </div>
                     <div class="user-block">
                         <div class="user-block__placeholder">Atstumas tarp jūsų darbo vietų</div>
-                        <div class="user-block__text"><i class="fas fa-map-marker"></i>{{ match.work_distance_text }}</div>
+                        <div class="user-block__text"><i class="fas fa-map-marker"></i>{{ match.work_distance_text }} {{ match.work_percent }}</div>
                     </div>
                     <div class="user-block hidden" id="phone-block-{{ match.id }}">
                         <div class="user-block__placeholder">Telefonas</div>

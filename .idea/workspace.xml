@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="40dac388-a9ab-454f-8a0f-84c101321777" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/MatchMaker.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/MatchMaker.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/matches.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/matches.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,6 +29,44 @@
     <expand />
     <select />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1482404918">
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="gitignore" value="1" />
+          <entry key="php" value="1" />
+          <entry key="twig" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="PHP" value="1" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Twig" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="php" value="861" />
+          <entry key="twig" value="27" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PHP" value="861" />
+          <entry key="Twig" value="27" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="rideto" />
   </component>
@@ -35,17 +75,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/home/matches.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="803">
-              <caret line="71" column="9" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
+            <state relative-caret-position="600">
+              <caret line="40" column="131" selection-start-line="40" selection-start-column="131" selection-end-line="40" selection-end-column="131" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ExtrernalApi/GooglePlacesApi.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="14" column="60" lean-forward="true" selection-start-line="14" selection-start-column="60" selection-end-line="14" selection-end-column="60" />
+            <state relative-caret-position="375">
+              <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -58,10 +98,23 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/RouteRegistrationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+            <state relative-caret-position="225">
+              <caret line="15" column="46" lean-forward="true" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
               <folding>
                 <element signature="e#6#88#0#PHP" expanded="true" />
+                <element signature="e#117#138#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Repository/UserRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+              <folding>
+                <element signature="e#34#54#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -79,17 +132,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Form/RouteRegisterType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
+            <state relative-caret-position="675">
               <caret line="52" selection-start-line="52" selection-end-line="52" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Service/MatchMaker.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1575">
-              <caret line="115" selection-start-line="115" selection-end-line="115" />
+            <state relative-caret-position="763">
+              <caret line="139" column="5" lean-forward="true" selection-start-line="129" selection-start-column="3" selection-end-line="139" selection-end-column="5" />
               <folding>
                 <element signature="e#114#134#0#PHP" expanded="true" />
               </folding>
@@ -125,6 +178,7 @@
       <find>make</find>
       <find>die</find>
       <find>route_register_description</find>
+      <find>round</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -164,7 +218,6 @@
         <option value="$PROJECT_DIR$/src/Migrations/Version20190508143444.php" />
         <option value="$PROJECT_DIR$/src/Controller/MatchController.php" />
         <option value="$PROJECT_DIR$/config/services.yaml" />
-        <option value="$PROJECT_DIR$/src/Service/MatchMaker.php" />
         <option value="$PROJECT_DIR$/assets/css/components/_all.scss" />
         <option value="$PROJECT_DIR$/assets/css/components/map.scss" />
         <option value="$PROJECT_DIR$/assets/css/global/normalize.css" />
@@ -175,19 +228,21 @@
         <option value="$PROJECT_DIR$/assets/css/sections/_all.scss" />
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
         <option value="$PROJECT_DIR$/src/Form/MatchFilterType.php" />
-        <option value="$PROJECT_DIR$/templates/home/matches.html.twig" />
         <option value="$PROJECT_DIR$/assets/css/sections/section-matches.scss" />
         <option value="$PROJECT_DIR$/templates/home/index.html.twig" />
         <option value="$PROJECT_DIR$/assets/css/sections/section-main.scss" />
         <option value="$PROJECT_DIR$/assets/js/app.js" />
         <option value="$PROJECT_DIR$/templates/partials/nav.html.twig" />
         <option value="$PROJECT_DIR$/assets/css/components/navigation.scss" />
-        <option value="$PROJECT_DIR$/src/Controller/RouteRegistrationController.php" />
         <option value="$PROJECT_DIR$/src/Form/RouteRegisterType.php" />
         <option value="$PROJECT_DIR$/src/Migrations/Version20190511115158.php" />
         <option value="$PROJECT_DIR$/src/Migrations/Version20190520090344.php" />
         <option value="$PROJECT_DIR$/templates/registration/route-register.html.twig" />
         <option value="$PROJECT_DIR$/src/ExtrernalApi/GooglePlacesApi.php" />
+        <option value="$PROJECT_DIR$/src/Repository/UserRepository.php" />
+        <option value="$PROJECT_DIR$/src/Controller/RouteRegistrationController.php" />
+        <option value="$PROJECT_DIR$/templates/home/matches.html.twig" />
+        <option value="$PROJECT_DIR$/src/Service/MatchMaker.php" />
       </list>
     </option>
   </component>
@@ -196,6 +251,14 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/package.json" />
+    </packageJsonPaths>
   </component>
   <component name="PhpServers">
     <servers />
@@ -279,11 +342,11 @@
       <path value="$PROJECT_DIR$/vendor/symfony/translation" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="67" />
-    <option name="y" value="25" />
-    <option name="width" value="1853" />
-    <option name="height" value="1055" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="758" />
+    <option name="y" value="70" />
+    <option name="width" value="2104" />
+    <option name="height" value="1225" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -353,7 +416,18 @@
             <path>
               <item name="rideto" type="b2602c69:ProjectViewProjectNode" />
               <item name="rideto" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rideto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rideto" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rideto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rideto" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="rideto" type="b2602c69:ProjectViewProjectNode" />
@@ -383,7 +457,30 @@
               <item name="rideto" type="b2602c69:ProjectViewProjectNode" />
               <item name="rideto" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rideto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rideto" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rideto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rideto" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rideto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rideto" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rideto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rideto" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="registration" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -401,6 +498,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/public/img" />
       <recent name="$PROJECT_DIR$/assets/css/global" />
       <recent name="$PROJECT_DIR$/assets/img" />
@@ -464,11 +562,13 @@
       <workItem from="1558191829665" duration="16971000" />
       <workItem from="1558346376531" duration="456000" />
       <workItem from="1558346864619" duration="204000" />
+      <workItem from="1559038003726" duration="967000" />
+      <workItem from="1559039555521" duration="3538000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132854000" />
+    <option name="totallyTimeSpent" value="138892000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -480,10 +580,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="446" y="72" width="2104" height="1225" extended-state="0" />
+    <frame x="758" y="70" width="2104" height="1225" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4990758" visible="true" weight="0.15227935" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4990758" visible="true" weight="0.15518914" />
       <window_info id="Structure" order="1" sideWeight="0.5009242" side_tool="true" weight="0.15808298" />
       <window_info id="npm" order="2" sideWeight="0.5009242" side_tool="true" weight="0.15808298" />
       <window_info id="Favorites" order="3" sideWeight="0.5009242" side_tool="true" weight="0.15808298" />
@@ -497,8 +597,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.7163253" weight="0.32918397" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.19835111" side_tool="true" visible="true" weight="0.22683142" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.80164886" visible="true" weight="0.22683142" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.19932105" side_tool="true" visible="true" weight="0.22683142" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.80067897" visible="true" weight="0.22683142" />
       <window_info anchor="bottom" id="PHP-CGI Server" order="12" />
       <window_info anchor="bottom" id="Messages" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -533,26 +633,18 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Entity/Matcher.php" />
     <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190506175417.php" />
     <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190508140104.php" />
     <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190506153924.php" />
     <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190508143444.php" />
     <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190510094718.php" />
     <entry file="file://$PROJECT_DIR$/src/Service/MatchDataService.php" />
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Migrations/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/UserRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Repository/RouteRepository.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -566,13 +658,6 @@
         <state relative-caret-position="-20" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/services.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -581,9 +666,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/build/app.css" />
-    <entry file="file://$PROJECT_DIR$/src/Controller/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/@material/floating-label/mdc-floating-label.scss">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -612,16 +694,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/MatchController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
-          <folding>
-            <element signature="e#117#137#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.yaml">
       <provider selected="true" editor-type-id="text-editor">
@@ -653,16 +725,6 @@
     <entry file="file://$PROJECT_DIR$/public/img/profile.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Service/MatchMaker.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1575">
-          <caret line="115" selection-start-line="115" selection-end-line="115" />
-          <folding>
-            <element signature="e#114#134#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/app.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -674,13 +736,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="37" column="72" selection-start-line="37" selection-start-column="72" selection-end-line="37" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/home/matches.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="803">
-          <caret line="71" column="9" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -719,23 +774,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/RouteRegistrationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-          <folding>
-            <element signature="e#6#88#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="551">
           <caret line="30" selection-start-line="30" selection-end-line="30" />
-          <folding>
-            <element signature="e#319#368#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -755,13 +797,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190511115158.php" />
     <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190520090344.php" />
-    <entry file="file://$PROJECT_DIR$/src/Form/RouteRegisterType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -776,10 +811,81 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/services.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/RouteRegisterType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ExtrernalApi/GooglePlacesApi.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="14" column="60" lean-forward="true" selection-start-line="14" selection-start-column="60" selection-end-line="14" selection-end-column="60" />
+        <state relative-caret-position="375">
+          <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/MatchController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+          <folding>
+            <element signature="e#117#137#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/RouteRegistrationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="46" lean-forward="true" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
+          <folding>
+            <element signature="e#6#88#0#PHP" expanded="true" />
+            <element signature="e#117#138#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/UserRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <folding>
+            <element signature="e#34#54#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home/matches.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="40" column="131" selection-start-line="40" selection-start-column="131" selection-end-line="40" selection-end-column="131" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Service/MatchMaker.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="763">
+          <caret line="139" column="5" lean-forward="true" selection-start-line="129" selection-start-column="3" selection-end-line="139" selection-end-column="5" />
+          <folding>
+            <element signature="e#114#134#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
