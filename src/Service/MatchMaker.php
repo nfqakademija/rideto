@@ -42,7 +42,8 @@ class MatchMaker
             $allDistances = $this->allDriversDistances($user);
         }
 
-        $matches = $this->filterByDistance($allDistances, $distanceFromHome, $distanceFromWork);
+        $matchesa = $this->filterByDistance($allDistances, $distanceFromHome, $distanceFromWork);
+        $matches = $this->addPercent($matchesa, $distanceFromHome, $distanceFromWork);
         return $matches;
     }
 
@@ -111,5 +112,29 @@ class MatchMaker
             }
         }
         return $results;
+    }
+
+    private function percent($distance, $selected_distance){
+        if($selected_distance <= 1000){
+            $percent = 100 * round($selected_distance/$distance, 2);
+        }
+        if($selected_distance <= 10000){
+            $percent = 10 * round($selected_distance/$distance,2);
+        }
+        if($selected_distance <= 100000){
+            $percent = round($selected_distance/$distance,2);
+        }
+        return $percent;
+    }
+
+    private function addPercent($matches, $distanceFromHome, $distanceFromWork){
+        foreach ($matches as &$match) {
+            $homePercent = $this->percent($match['home_distance_value'], $distanceFromHome);
+            $workPercent = $this->percent($match['work_distance_value'], $distanceFromWork);
+            $match['home_percent'] = $homePercent;
+            $match['work_percent'] = $workPercent;
+        }
+        return $matches;
+
     }
 }
