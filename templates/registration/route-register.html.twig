@@ -26,12 +26,12 @@
                 <label class="mdc-floating-label">Telefono numeris</label>
             </div>
                 <div class="mdc-text-field origin">
-                    {{ form_widget(route_form.origin_input) }}
+                    {{ form_widget(route_form.route.origin_input) }}
                     <div class="mdc-line-ripple"></div>
                     <label class="mdc-floating-label">Kelionės pradžia (tikslus adresas - kitiems nebus matomas)</label>
                 </div>
                 <div class="mdc-text-field destination">
-                    {{ form_widget(route_form.destination_input) }}
+                    {{ form_widget(route_form.route.destination_input) }}
                     <div class="mdc-line-ripple"></div>
                     <label class="mdc-floating-label">Kelionės tikslas (tikslus adresas - kitiems nebus matomas)</label>
                 </div>
@@ -106,8 +106,8 @@
         this.directionsDisplay = new google.maps.DirectionsRenderer;
         this.directionsDisplay.setMap(map);
 
-        var originInput = document.getElementById('route_register_origin_input');
-        var destinationInput = document.getElementById('route_register_destination_input');
+        var originInput = document.getElementById('route_register_route_origin_input');
+        var destinationInput = document.getElementById('route_register_route_destination_input');
 
 
         var originAutocomplete = new google.maps.places.Autocomplete(originInput);
@@ -152,12 +152,12 @@
             }
             if (mode === 'ORIG') {
                 me.originPlaceId = place.place_id;
-                document.getElementById('route_register_home_location').value = place.place_id;
+                document.getElementById('route_register_route_home_location').value = place.place_id;
 
 
             } else {
                 me.destinationPlaceId = place.place_id;
-                document.getElementById('route_register_work_location').value = place.place_id;
+                document.getElementById('route_register_route_work_location').value = place.place_id;
             }
             me.route();
         });
