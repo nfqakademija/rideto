@@ -27,47 +27,6 @@
     <expand />
     <select />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="1482404918">
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="json" value="2" />
-          <entry key="lock" value="2" />
-          <entry key="php" value="30" />
-          <entry key="rst" value="1" />
-          <entry key="twig" value="3" />
-          <entry key="yaml" value="31" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JSON" value="3" />
-          <entry key="PHP" value="30" />
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="ReST" value="1" />
-          <entry key="Twig" value="3" />
-          <entry key="YAML" value="31" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="php" value="888" />
-          <entry key="yaml" value="53" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="PHP" value="888" />
-          <entry key="YAML" value="53" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.php.new.class">
-        <counts>
-          <entry key="PHP Class.type" value="1" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FavoritesManager">
     <favorites_list name="rideto" />
   </component>
