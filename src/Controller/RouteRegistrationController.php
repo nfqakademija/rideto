@@ -8,18 +8,16 @@
 
 namespace App\Controller;
 
-use App\Entity\Route;
-use App\Entity\User;
 use App\Form\RouteRegisterType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 class RouteRegistrationController extends Controller
 {
-    public function index(Request $request)
+    public function index(Request $request, UserInterface $user)
     {
-        $form = $this->createForm(RouteRegisterType::class);
+        $form = $this->createForm(RouteRegisterType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -28,9 +26,8 @@ class RouteRegistrationController extends Controller
             $entityManager->persist($user);
             $entityManager->flush();
 
-            return $this->redirect('matches?user=' . $user->getId());
+            return $this->redirect('matches');
         }
-
         return $this->render('registration/route-register.html.twig', ['route_form' => $form->createView()]);
     }
 }

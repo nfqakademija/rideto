@@ -1,12 +1,15 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
-registerRoute:
+register_route:
   path: /reg
   controller: App\Controller\RouteRegistrationController:index
-saveRoute:
+save_route:
   path: /route-save
   controller: App\Controller\RouteRegistrationController:store
 matches:
   path: /matches
   controller: App\Controller\MatchController:index
+login_redirect:
+  path: /login-redirect
+  controller: App\Controller\RedirectController:redirectAfterLogin

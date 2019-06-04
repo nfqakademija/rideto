@@ -13,6 +13,7 @@ use App\Form\MatchFilterType;
 use App\Service\MatchMaker;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 class MatchController extends Controller
 {
@@ -22,13 +23,8 @@ class MatchController extends Controller
      * @param MatchMaker $matchMaker
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function index(Request $request, MatchMaker $matchMaker)
+    public function index(Request $request, MatchMaker $matchMaker, UserInterface $user)
     {
-        $user = $this->getDoctrine()
-            ->getRepository(User::class)
-            ->find($request->query->get('user'));
-
-
         $form = $this->createForm(MatchFilterType::class);
         $form->handleRequest($request);
 
