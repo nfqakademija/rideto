@@ -79,13 +79,18 @@
                     </div>
                 </div>
             {% endfor %}
-            {% if page > 1 %}
-             <a href="?page={{ page - 1 }}">Ankstesnis</a>
-             <a href="?page={{ page + 1 }}">Sekantis</a>
-            {% endif %}
-            {% if page <= 1 %}
-                <a href="?page=2">Sekantis</a>
-            {% endif %}
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    {% if page > 1 %}
+                        <li class="page-item"><a class="page-link" href="?page={{ page - 1 }}">Ankstesnis</a></li>
+                        <li class="page-item"><a class="page-link" href="?page={{ page + 1 }}">Sekantis</a></li>
+                    {% endif %}
+                    {% if page <= 1 %}
+                        <li class="page-item"> <a class="page-link" href="?page=2">Sekantis</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+
         </div>
     </section>
 <script>
@@ -96,18 +101,7 @@
         let phone = document.getElementById("phone-block-" + id);
         phone.classList.remove("hidden");
         button.style.display = "none";
-
     }
-
 </script>
-    <script
-            src="https://code.jquery.com/jquery-3.4.1.js"
-            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-            crossorigin="anonymous"></script>
-    <script>
 
-
-
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 {% endblock %}

@@ -30,7 +30,9 @@ class RouteRegisterType extends AbstractType
             ->add('route_description', TextareaType::class, [
                 'attr' => ['class' => 'mdc-text-field__input']
             ])
-            ->add('route', RouteType::class)
+            ->add('route', RouteType::class,[
+                'label' => false
+            ])
             ->add('description', TextareaType::class, [
                 'attr' => ['class' => 'mdc-text-field__input']
             ])

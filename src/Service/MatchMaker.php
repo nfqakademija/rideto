@@ -134,7 +134,7 @@ class MatchMaker
     private function sort($matches)
     {
         uasort($matches, function($a, $b) {
-            return ($a->home_distance_value + $a->work_distance_value < $b->home_distance_value + $b->work_distance_value);
+            return ($a['home_percent'] + $a['work_percent'] < $b['home_percent'] + $b['work_percent']);
         });
         return $matches;
     }
