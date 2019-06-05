@@ -18,3 +18,9 @@ security_logout:
   methods: GET
 login:
   path: /login
+quick_match:
+  path: /quick/match
+  controller: App\Controller\QuickMatchController:index
+quick_search:
+  path: /quick/search
+  controller: App\Controller\QuickSearchController:index
