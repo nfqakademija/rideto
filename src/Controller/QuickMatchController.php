@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Form\MatchFilterType;
+use App\Service\ArrayPaginator;
 use App\Service\MatchMaker;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -17,7 +18,7 @@ class QuickMatchController extends AbstractController
      * @param MatchMaker $matchMaker
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function index(Request $request, MatchMaker $matchMaker)
+    public function index(Request $request, MatchMaker $matchMaker, ArrayPaginator $paginator)
     {
         if ($this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
             return $this->redirectToRoute('homepage');
@@ -40,16 +41,13 @@ class QuickMatchController extends AbstractController
             $matches= $matchMaker->findMatches($user, 100000, 100000);
         }
 
-        if($request->query->get('page')) {
-            $page = $request->query->get('page');
-            $matches = $paginator->paginateArray($matches, $page);
-        } else {
-            $matches = $paginator->paginateArray($matches, 1);
-        }
+        $page = $request->query->get('page');
+        $matches = $paginator->paginateArray($matches, $page);
 
         return $this->render('home/matches.html.twig', ['matches' => $matches,
             'title' => 'Matches',
-            'filter_form' => $form->createView()
+            'filter_form' => $form->createView(),
+            'page' => $page
         ]);
     }
 }
