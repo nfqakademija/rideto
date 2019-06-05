@@ -24,6 +24,16 @@
             {{ form_end(filter_form) }}
         </aside>
         <div class="matched-users">
+            {% if matches is empty %}
+            <div class="user">
+                <div class="user-info">
+                    Daugiau vartotojų nėra
+                </div>
+                <div class="user-info">
+                   <a href="/matches" >Grįžti</a>
+                </div>
+            </div>
+            {% endif %}
             {% for match in matches %}
                 <div class="user">
                     <div class="user-image">
@@ -56,8 +66,14 @@
                     </div>
                 </div>
             {% endfor %}
+            {% if page > 1 %}
+             <a href="matches?page={{ page - 1 }}">Ankstesnis</a>
+             <a href="matches?page={{ page + 1 }}">Sekantis</a>
+            {% endif %}
+            {% if page <= 1 %}
+                <a href="matches?page=2">Sekantis</a>
+            {% endif %}
         </div>
-
     </section>
 <script>
     function showPhoneNumber(){

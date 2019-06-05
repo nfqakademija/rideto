@@ -31,13 +31,20 @@ class QuickMatchController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $matches= $matchMaker->findMatches(
+            $matches = $matchMaker->findMatches(
                 $user,
                 $form->getData()['home_distance'],
                 $form->getData()['work_distance']
             );
         } else {
             $matches= $matchMaker->findMatches($user, 100000, 100000);
+        }
+
+        if($request->query->get('page')) {
+            $page = $request->query->get('page');
+            $matches = $paginator->paginateArray($matches, $page);
+        } else {
+            $matches = $paginator->paginateArray($matches, 1);
         }
 
         return $this->render('home/matches.html.twig', ['matches' => $matches,
