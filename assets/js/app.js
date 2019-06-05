@@ -31,6 +31,3 @@ if(document.querySelector('.quick')){
     const quickDest = new MDCTextField(document.querySelector('.destination'));
 }
 
-
-
-
