@@ -47,7 +47,8 @@ class QuickMatchController extends AbstractController
         return $this->render('home/matches.html.twig', ['matches' => $matches,
             'title' => 'Matches',
             'filter_form' => $form->createView(),
-            'page' => $page
+            'page' => $page,
+            'user' => $user
         ]);
     }
 }

@@ -11,7 +11,7 @@
 
             <ul class="navigation-items">
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                    <li class="navigation-items__item"><a href="/reg">{{ app.user.email }}</a></li>
+                    <li class="navigation-items__item"><a href="/info">{{ app.user.email }}</a></li>
                     <li class="navigation-items__item"><a href="/logout">Atsijungti</a></li>
                 {% endif %}
                 {% if not is_granted('IS_AUTHENTICATED_FULLY') %}

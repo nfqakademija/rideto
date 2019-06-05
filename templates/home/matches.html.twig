@@ -37,18 +37,31 @@
             {% for match in matches %}
                 <div class="user">
                     <div class="user-image">
-                        <i class="fas fa-user-alt"></i>
+                        {% if user.role == 'client' %}
+                            <i class="fas fa-car"></i>
+                        {% endif %}
+                        {% if user.role == 'driver' %}
+                            <i class="fas fa-walking"></i>
+                        {% endif %}
                     </div>
                     <div class="user-info">
                         {{ match.name }}, {{ match.age }}
                     </div>
                     <div class="user-block">
                         <div class="user-block__placeholder">Atstumas tarp jūsų namų</div>
-                        <div class="user-block__text"><i class="fa fa-home"></i>{{ match.home_distance_text }} {{ match.home_percent }}</div>
+                        <div class="user-block__text"><i class="fa fa-home"></i>{{ match.home_distance_text }}
+                            <div class="progress bg-danger">
+                                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: {{ match.home_percent }}%;" aria-valuenow="{{ match.home_percent }}" aria-valuemin="0" aria-valuemax="100">{{ match.home_percent }}%</div>
+                            </div>
+                        </div>
                     </div>
                     <div class="user-block">
                         <div class="user-block__placeholder">Atstumas tarp jūsų darbo vietų</div>
-                        <div class="user-block__text"><i class="fas fa-map-marker"></i>{{ match.work_distance_text }} {{ match.work_percent }}</div>
+                        <div class="user-block__text"><i class="fas fa-map-marker"></i>{{ match.work_distance_text }}
+                            <div class="progress bg-danger">
+                                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: {{ match.work_percent }}%;" aria-valuenow="{{ match.work_percent }}" aria-valuemin="0" aria-valuemax="100">{{ match.work_percent }}%</div>
+                            </div>
+                        </div>
                     </div>
                     <div class="user-block hidden" id="phone-block-{{ match.id }}">
                         <div class="user-block__placeholder">Telefonas</div>
@@ -85,6 +98,16 @@
         button.style.display = "none";
 
     }
-</script>
 
+</script>
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
+    <script>
+
+
+
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 {% endblock %}
