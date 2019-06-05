@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-
 use App\Entity\User;
 use App\Form\QuickSearchRouteType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -10,7 +9,6 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\Session;
-
 
 class QuickSearchController extends AbstractController
 {
@@ -28,7 +26,7 @@ class QuickSearchController extends AbstractController
         $routeForm->handleRequest($request);
 
         if ($routeForm->isSubmitted() && $routeForm->isValid()) {
-            if($this->get('session')->get('user')) {
+            if ($this->get('session')->get('user')) {
                 $user = $this->get('session')->get('user');
                 $user->setRoute($routeForm->getData()['route']);
                 $this->get('session')->set('user', $user);

@@ -115,13 +115,15 @@ class MatchMaker
         return $results;
     }
 
-    private function percent($distance, $selected_distance){
+    private function percent($distance, $selected_distance)
+    {
         $percent = 1 - ($distance/$selected_distance);
-        $percent = round($percent * 100,1);
+        $percent = round($percent * 100, 1);
         return $percent;
     }
 
-    private function addPercent($matches, $distanceFromHome, $distanceFromWork){
+    private function addPercent($matches, $distanceFromHome, $distanceFromWork)
+    {
         foreach ($matches as &$match) {
             $homePercent = $this->percent($match['home_distance_value'], $distanceFromHome);
             $workPercent = $this->percent($match['work_distance_value'], $distanceFromWork);
@@ -133,7 +135,7 @@ class MatchMaker
 
     private function sort($matches)
     {
-        uasort($matches, function($a, $b) {
+        uasort($matches, function ($a, $b) {
             return ($a['home_percent'] + $a['work_percent'] < $b['home_percent'] + $b['work_percent']);
         });
         return $matches;

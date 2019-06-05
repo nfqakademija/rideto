@@ -23,7 +23,7 @@ class QuickMatchController extends AbstractController
         if ($this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
             return $this->redirectToRoute('homepage');
         }
-        if($this->get('session')->get('user')) {
+        if ($this->get('session')->get('user')) {
             $user = $this->get('session')->get('user');
         } else {
             return new RedirectResponse($this->generateUrl('quick_search'));

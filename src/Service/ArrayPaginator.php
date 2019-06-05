@@ -8,12 +8,12 @@
 
 namespace App\Service;
 
-
 class ArrayPaginator
 {
     private $showPerPage = 10;
 
-    public function paginateArray(array $array, ?int $page){
+    public function paginateArray(array $array, ?int $page)
+    {
         $page = $page < 1 ? 1 : $page;
         $start = ($page - 1) * ($this->showPerPage);
         $offset = $this->showPerPage;

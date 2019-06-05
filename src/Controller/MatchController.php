@@ -15,7 +15,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
-
 class MatchController extends Controller
 {
 
@@ -26,7 +25,8 @@ class MatchController extends Controller
      * @param ArrayPaginator $paginator
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function index(Request $request, MatchMaker $matchMaker, TokenStorageInterface $tokenStorage, ArrayPaginator $paginator)
+    public function index(Request $request, MatchMaker $matchMaker,
+                          TokenStorageInterface $tokenStorage, ArrayPaginator $paginator)
     {
 
         $user = $tokenStorage->getToken()->getUser();
@@ -53,5 +53,4 @@ class MatchController extends Controller
                                                               'user' => $user
                                                               ]);
     }
-
 }

@@ -22,13 +22,12 @@ class RouteType extends AbstractType
             ])
             ->add('home_location', HiddenType::class)
             ->add('work_location', HiddenType::class);
-
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
        $resolver->setDefaults([
                     'data_class' => Route::class
-                ]);
+                    ]);
     }
 }
