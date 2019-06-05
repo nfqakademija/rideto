@@ -6,7 +6,13 @@
     </div>
 
     <ul class="navigation-items">
-        <li class="navigation-items__item"><a href="/register">Registracija</a></li>
-        <li class="navigation-items__item"><a href="/login">Prisijungimas</a></li>
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <li class="navigation-items__item"><a href="/reg">{{ app.user.email }}</a></li>
+            <li class="navigation-items__item"><a href="/logout">Atsijungti</a></li>
+        {% endif %}
+        {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
+            <li class="navigation-items__item"><a href="/register">Registracija</a></li>
+            <li class="navigation-items__item"><a href="/login">Prisijungimas</a></li>
+        {% endif %}
     </ul>
 </nav>

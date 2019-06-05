@@ -26,8 +26,11 @@ if(document.querySelector('.username')){
     const dest = new MDCTextField(document.querySelector('.destination'));
 }
 
+if(document.querySelector('.quick')){
+    const quickOrigin = new MDCTextField(document.querySelector('.origin'));
+    const quickDest = new MDCTextField(document.querySelector('.destination'));
+}
 
 
 
 
-console.log('asdasd')

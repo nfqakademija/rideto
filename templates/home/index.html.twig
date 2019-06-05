@@ -10,8 +10,14 @@
             </div>
 
             <ul class="navigation-items">
-                <li class="navigation-items__item"><a href="/register">Registracija</a></li>
-                <li class="navigation-items__item"><a href="/login">Prisijungimas</a></li>
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <li class="navigation-items__item"><a href="/reg">{{ app.user.email }}</a></li>
+                    <li class="navigation-items__item"><a href="/logout">Atsijungti</a></li>
+                {% endif %}
+                {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <li class="navigation-items__item"><a href="/register">Registracija</a></li>
+                    <li class="navigation-items__item"><a href="/login">Prisijungimas</a></li>
+                {% endif %}
             </ul>
         </nav>
 
@@ -21,9 +27,17 @@
             <div class="info-main">
                 Rask žmones keliaujančius tuo pačiu maršrutu kaip tu, susisiek ir važiuokit drauge !
             </div>
-            <a class="info-button" href="/register">
-                IŠBANDYK
-            </a>
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <a class="info-button" href="/matches">
+                    SURASK
+                </a>
+            {% endif %}
+            {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
+                <a class="info-button" href="/quick/search">
+                    IŠBANDYK
+                </a>
+            {% endif %}
+
             <div class="info-cs">
                 Jau greitai ...
             </div>

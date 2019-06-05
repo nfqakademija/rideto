@@ -1,6 +1,6 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+homepage:
+    path: /
+    controller: App\Controller\HomeController::index
 register_route:
   path: /reg
   controller: App\Controller\RouteRegistrationController:index
@@ -13,3 +13,8 @@ matches:
 login_redirect:
   path: /login-redirect
   controller: App\Controller\RedirectController:redirectAfterLogin
+security_logout:
+  path: /logout
+  methods: GET
+login:
+  path: /login
