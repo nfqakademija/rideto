@@ -7,6 +7,9 @@ register_route:
 save_route:
   path: /route-save
   controller: App\Controller\RouteRegistrationController:store
+tryout:
+  path: /tryout
+  controller: App\Controller\TryoutController:index
 matches:
   path: /matches
   controller: App\Controller\MatchController:index
