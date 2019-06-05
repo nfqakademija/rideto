@@ -11,12 +11,14 @@ namespace App\Controller;
 use App\Form\RouteRegisterType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
+
 
 class RouteRegistrationController extends Controller
 {
-    public function index(Request $request, UserInterface $user)
+    public function index(Request $request, TokenStorageInterface $tokenStorage)
     {
+        $user = $tokenStorage->getToken()->getUser();
         $form = $this->createForm(RouteRegisterType::class, $user);
         $form->handleRequest($request);
 

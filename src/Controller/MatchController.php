@@ -8,12 +8,12 @@
 
 namespace App\Controller;
 
-use App\Entity\User;
 use App\Form\MatchFilterType;
 use App\Service\MatchMaker;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
+
 
 class MatchController extends Controller
 {
@@ -23,8 +23,9 @@ class MatchController extends Controller
      * @param MatchMaker $matchMaker
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function index(Request $request, MatchMaker $matchMaker, UserInterface $user)
+    public function index(Request $request, MatchMaker $matchMaker, TokenStorageInterface $tokenStorage)
     {
+        $user = $tokenStorage->getToken()->getUser();
         $form = $this->createForm(MatchFilterType::class);
         $form->handleRequest($request);
 
