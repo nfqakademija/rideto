@@ -25,9 +25,10 @@ class MatchController extends Controller
      * @param ArrayPaginator $paginator
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function index(Request $request, MatchMaker $matchMaker,
-                          TokenStorageInterface $tokenStorage, ArrayPaginator $paginator)
-    {
+    public function index(
+        Request $request, MatchMaker $matchMaker,
+        TokenStorageInterface $tokenStorage, ArrayPaginator $paginator
+    ) {
 
         $user = $tokenStorage->getToken()->getUser();
         $form = $this->createForm(MatchFilterType::class);
