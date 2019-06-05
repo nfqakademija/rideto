@@ -18,8 +18,10 @@ class RegistrationController extends AbstractController
      * @Route("/register", name="app_register")
      */
     public function register(
-        Request $request, UserPasswordEncoderInterface $passwordEncoder,
-        GuardAuthenticatorHandler $guardHandler, LoginFormAuthenticator $authenticator
+        Request $request,
+        UserPasswordEncoderInterface $passwordEncoder,
+        GuardAuthenticatorHandler $guardHandler,
+        LoginFormAuthenticator $authenticator
     ): Response {
         if ($this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
             return $this->redirectToRoute('homepage');

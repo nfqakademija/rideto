@@ -33,7 +33,7 @@ class RouteRegisterType extends AbstractType
             ->add('route', RouteType::class, [
                 'label' => false
             ])
-            ->add('description',TextareaType::class, [
+            ->add('description', TextareaType::class, [
                 'attr' => ['class' => 'mdc-text-field__input']
             ])
             ->add('phone', NumberType::class, [

@@ -30,7 +30,8 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
 
     public function __construct(
         EntityManagerInterface $entityManager,
-        UrlGeneratorInterface $urlGenerator, CsrfTokenManagerInterface $csrfTokenManager,
+        UrlGeneratorInterface $urlGenerator,
+        CsrfTokenManagerInterface $csrfTokenManager,
         UserPasswordEncoderInterface $passwordEncoder
     ) {
         $this->entityManager = $entityManager;

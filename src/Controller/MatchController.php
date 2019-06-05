@@ -26,8 +26,10 @@ class MatchController extends Controller
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function index(
-        Request $request, MatchMaker $matchMaker,
-        TokenStorageInterface $tokenStorage, ArrayPaginator $paginator
+        Request $request,
+        MatchMaker $matchMaker,
+        TokenStorageInterface $tokenStorage,
+        ArrayPaginator $paginator
     ) {
 
         $user = $tokenStorage->getToken()->getUser();
