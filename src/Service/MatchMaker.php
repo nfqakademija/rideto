@@ -44,6 +44,7 @@ class MatchMaker
 
         $matchesa = $this->filterByDistance($allDistances, $distanceFromHome, $distanceFromWork);
         $matches = $this->addPercent($matchesa, $distanceFromHome, $distanceFromWork);
+        $matches = $this->sort($matches);
         return $matches;
     }
 
@@ -128,6 +129,13 @@ class MatchMaker
             $match['work_percent'] = $workPercent;
         }
         return $matches;
+    }
 
+    private function sort($matches)
+    {
+        uasort($matches, function($a, $b) {
+            return ($a->home_distance_value + $a->work_distance_value < $b->home_distance_value + $b->work_distance_value);
+        });
+        return $matches;
     }
 }
